@@ -21,68 +21,68 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 public class Store extends AppCompatActivity {
-    private ImageView imageView27, imageView30, imageView28, imageView29, img_ManTwo, img_ManFi, img_ManTen, img_ManEi, img_ManEigh, imageView39;
-    private TextView textView45, textView44, textView2, textView3, textView90, textView99, textView4, textView68, textView63, textView64, textView65, textView66, textView67;
+    private ImageView ic_crock_logo, ic_wallet, ic_cart, ic_sale, ic_starts, ic_animals, ic_planet, ic_professions, ic_transport, ic_logo;
+    private TextView txt_crocodile_main, txt_buy_new_words, txt_starts, txt_animals, txt_planet, txt_professions, txt_transport, txt_crocodile_shop, txt_rel_one_buy, txt_rel_six_buy, txt_rel_five_buy, txt_rel_three_buy, txt_rel_two_buy;
     @SuppressLint("StaticFieldLeak")
     public static Context context_store;
-    private TextView textView47, textView52, textView50, textView56, textView54, textView77;
+    private TextView txt_rel_one_you, txt_rel_two_you, txt_rel_three_you, txt_rel_five_you, txt_rel_six_you, txt_small_coin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         context_store = getApplicationContext();
-        textView47 = findViewById(R.id.textView47);
-        textView52 = findViewById(R.id.textView52);
-        textView50 = findViewById(R.id.textView50);
-        textView54 = findViewById(R.id.textView54);
-        textView56 = findViewById(R.id.textView56);
-        textView45 = findViewById(R.id.textView45);
-        textView44 = findViewById(R.id.textView44);
-        textView2 = findViewById(R.id.textView2);
-        textView77 = findViewById(R.id.textView77);
-        textView3 = findViewById(R.id.textView3);
-        textView90 = findViewById(R.id.textView90);
-        textView99 = findViewById(R.id.textView99);
-        textView4 = findViewById(R.id.textView4);
-        textView63 = findViewById(R.id.textView63);
-        textView64 = findViewById(R.id.textView64);
-        textView65 = findViewById(R.id.textView65);
-        textView66 = findViewById(R.id.textView66);
-        textView67 = findViewById(R.id.textView67);
-        textView68 = findViewById(R.id.textView68);
-        imageView27 = findViewById(R.id.imageView27);
-        imageView39 = findViewById(R.id.imageView39);
-        imageView30 = findViewById(R.id.imageView30);
-        imageView28 = findViewById(R.id.imageView28);
-        imageView29 = findViewById(R.id.imageView29);
-        img_ManTwo = findViewById(R.id.img_ManTwo);
-        img_ManFi = findViewById(R.id.img_ManFi);
-        img_ManTen = findViewById(R.id.img_ManTen);
-        img_ManEi = findViewById(R.id.img_ManEi);
-        img_ManEigh = findViewById(R.id.img_ManEigh);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout three = findViewById(R.id.three);
-        RelativeLayout five = findViewById(R.id.five);
-        RelativeLayout six = findViewById(R.id.six);
+        txt_rel_one_you = findViewById(R.id.txt_rel_one_you);
+        txt_rel_two_you = findViewById(R.id.txt_rel_two_you);
+        txt_rel_three_you = findViewById(R.id.txt_rel_three_you);
+        txt_rel_six_you = findViewById(R.id.txt_rel_six_you);
+        txt_rel_five_you = findViewById(R.id.txt_rel_five_you);
+        txt_crocodile_main = findViewById(R.id.txt_crocodile_main);
+        txt_buy_new_words = findViewById(R.id.txt_buy_new_words);
+        txt_starts = findViewById(R.id.txt_starts);
+        txt_small_coin = findViewById(R.id.txt_small_coin);
+        txt_animals = findViewById(R.id.txt_animals);
+        txt_planet = findViewById(R.id.txt_planet);
+        txt_professions = findViewById(R.id.txt_professions);
+        txt_transport = findViewById(R.id.txt_transport);
+        txt_rel_one_buy = findViewById(R.id.txt_rel_one_buy);
+        txt_rel_six_buy = findViewById(R.id.txt_rel_six_buy);
+        txt_rel_five_buy = findViewById(R.id.txt_rel_five_buy);
+        txt_rel_three_buy = findViewById(R.id.txt_rel_three_buy);
+        txt_rel_two_buy = findViewById(R.id.txt_rel_two_buy);
+        txt_crocodile_shop = findViewById(R.id.txt_crocodile_shop);
+        ic_crock_logo = findViewById(R.id.ic_crock_logo);
+        ic_logo = findViewById(R.id.ic_logo);
+        ic_wallet = findViewById(R.id.ic_wallet);
+        ic_cart = findViewById(R.id.ic_cart);
+        ic_sale = findViewById(R.id.ic_sale);
+        ic_starts = findViewById(R.id.ic_starts);
+        ic_animals = findViewById(R.id.ic_animals);
+        ic_planet = findViewById(R.id.ic_planet);
+        ic_professions = findViewById(R.id.ic_professions);
+        ic_transport = findViewById(R.id.ic_transport);
+        RelativeLayout rel_one = findViewById(R.id.rel_one);
+        RelativeLayout rel_two = findViewById(R.id.rel_two);
+        RelativeLayout rel_three = findViewById(R.id.rel_three);
+        RelativeLayout rel_five = findViewById(R.id.rel_five);
+        RelativeLayout rel_six = findViewById(R.id.rel_six);
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500);
         anim.setStartOffset(20);
         anim.setRepeatMode(Animation.REVERSE);
         anim.setRepeatCount(Animation.INFINITE);
-        textView68.startAnimation(anim);
+        txt_crocodile_shop.startAnimation(anim);
         Font();
         GetDicCount();
         PushImage();
-        one.setOnClickListener(new View.OnClickListener() {
+        rel_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent next = new Intent(Store.this, LastStorePage.class);
                 startActivity(next);
             }
         });
-        two.setOnClickListener(new View.OnClickListener() {
+        rel_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Store.this);
@@ -107,7 +107,7 @@ public class Store extends AppCompatActivity {
                 alert.show();
             }
         });
-        three.setOnClickListener(new View.OnClickListener() {
+        rel_three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Store.this);
@@ -133,7 +133,7 @@ public class Store extends AppCompatActivity {
             }
 
         });
-        five.setOnClickListener(new View.OnClickListener() {
+        rel_five.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Store.this);
@@ -158,7 +158,7 @@ public class Store extends AppCompatActivity {
                 alert.show();
             }
         });
-        six.setOnClickListener(new View.OnClickListener() {
+        rel_six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Store.this);
@@ -196,31 +196,31 @@ public class Store extends AppCompatActivity {
     }
 
     public void Font() {
-        textView45.setTypeface(Typeface.createFromAsset(
+        txt_crocodile_main.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_starts.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_animals.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView4.setTypeface(Typeface.createFromAsset(
+        txt_transport.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView44.setTypeface(Typeface.createFromAsset(
+        txt_buy_new_words.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView90.setTypeface(Typeface.createFromAsset(
+        txt_planet.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView99.setTypeface(Typeface.createFromAsset(
+        txt_professions.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView68.setTypeface(Typeface.createFromAsset(
+        txt_crocodile_shop.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView64.setTypeface(Typeface.createFromAsset(
+        txt_rel_six_buy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView65.setTypeface(Typeface.createFromAsset(
+        txt_rel_five_buy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView63.setTypeface(Typeface.createFromAsset(
+        txt_rel_one_buy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView66.setTypeface(Typeface.createFromAsset(
+        txt_rel_three_buy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView67.setTypeface(Typeface.createFromAsset(
+        txt_rel_two_buy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -241,43 +241,43 @@ public class Store extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView27);
+                .into(ic_crock_logo);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView30);
+                .into(ic_wallet);
         Glide
                 .with(this)
                 .load(four)
-                .into(imageView28);
+                .into(ic_cart);
         Glide
                 .with(this)
                 .load(five)
-                .into(imageView29);
+                .into(ic_sale);
         Glide
                 .with(this)
                 .load(seven)
-                .into(img_ManTwo);
+                .into(ic_starts);
         Glide
                 .with(this)
                 .load(eight)
-                .into(img_ManFi);
+                .into(ic_animals);
         Glide
                 .with(this)
                 .load(nine)
-                .into(img_ManTen);
+                .into(ic_planet);
         Glide
                 .with(this)
                 .load(ten)
-                .into(img_ManEi);
+                .into(ic_professions);
         Glide
                 .with(this)
                 .load(eleven)
-                .into(img_ManEigh);
+                .into(ic_transport);
         Glide
                 .with(this)
                 .load(twelve)
-                .into(imageView39);
+                .into(ic_logo);
 
     }
 
@@ -287,7 +287,7 @@ public class Store extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         String def_locale = sharedPreferences.getString("DEFAULT_LOCALE", "");
         String coins = sharedPreferences.getString("COIN", "");
-        textView77.setText(coins + " " + getString(R.string.coinss));
+        txt_small_coin.setText(coins + " " + getString(R.string.coinss));
         if (def_locale.contains("ru")) {
             String animal_ru = sharedPreferences.getString("RU_ANIMAL_CURSOR", "");
             String planet_ru = sharedPreferences.getString("RU_PLANET_CURSOR", "");
@@ -295,11 +295,11 @@ public class Store extends AppCompatActivity {
             String transport_ru = sharedPreferences.getString("RU_TRANSPORT_CURSOR", "");
             int start_int_ru = Integer.parseInt(sharedPreferences.getString("RU_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("RU_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("RU_HARD_CURSOR", ""));
             String starting_ru = String.valueOf(start_int_ru);
-            textView47.setText(getString(R.string.for_y) + "\n" + starting_ru + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.for_y) + "\n" + animal_ru + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.for_y) + "\n" + planet_ru + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.for_y) + "\n" + professions_ru + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.for_y) + "\n" + transport_ru + "\n" + getString(R.string.word));
+            txt_rel_one_you.setText(getString(R.string.for_y) + "\n" + starting_ru + "\n" + getString(R.string.word));
+            txt_rel_two_you.setText(getString(R.string.for_y) + "\n" + animal_ru + "\n" + getString(R.string.word));
+            txt_rel_three_you.setText(getString(R.string.for_y) + "\n" + planet_ru + "\n" + getString(R.string.word));
+            txt_rel_five_you.setText(getString(R.string.for_y) + "\n" + professions_ru + "\n" + getString(R.string.word));
+            txt_rel_six_you.setText(getString(R.string.for_y) + "\n" + transport_ru + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("en")) {
             String animal_en = sharedPreferences.getString("EN_ANIMAL_CURSOR", "");
@@ -308,11 +308,11 @@ public class Store extends AppCompatActivity {
             String transport_en = sharedPreferences.getString("EN_TRANSPORT_CURSOR", "");
             int start_int_en = Integer.parseInt(sharedPreferences.getString("EN_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("EN_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("EN_HARD_CURSOR", ""));
             String starting_en = String.valueOf(start_int_en);
-            textView47.setText(getString(R.string.for_y) + "\n" + starting_en + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.for_y) + "\n" + animal_en + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.for_y) + "\n" + planet_en + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.for_y) + "\n" + professions_en + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.for_y) + "\n" + transport_en + "\n" + getString(R.string.word));
+            txt_rel_one_you.setText(getString(R.string.for_y) + "\n" + starting_en + "\n" + getString(R.string.word));
+            txt_rel_two_you.setText(getString(R.string.for_y) + "\n" + animal_en + "\n" + getString(R.string.word));
+            txt_rel_three_you.setText(getString(R.string.for_y) + "\n" + planet_en + "\n" + getString(R.string.word));
+            txt_rel_five_you.setText(getString(R.string.for_y) + "\n" + professions_en + "\n" + getString(R.string.word));
+            txt_rel_six_you.setText(getString(R.string.for_y) + "\n" + transport_en + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("de")) {
             String animal_de = sharedPreferences.getString("DE_ANIMAL_CURSOR", "");
@@ -321,11 +321,11 @@ public class Store extends AppCompatActivity {
             String transport_de = sharedPreferences.getString("DE_TRANSPORT_CURSOR", "");
             int start_int_de = Integer.parseInt(sharedPreferences.getString("DE_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("DE_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("DE_HARD_CURSOR", ""));
             String starting_de = String.valueOf(start_int_de);
-            textView47.setText(getString(R.string.for_y) + "\n" + starting_de + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.for_y) + "\n" + animal_de + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.for_y) + "\n" + planet_de + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.for_y) + "\n" + professions_de + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.for_y) + "\n" + transport_de + "\n" + getString(R.string.word));
+            txt_rel_one_you.setText(getString(R.string.for_y) + "\n" + starting_de + "\n" + getString(R.string.word));
+            txt_rel_two_you.setText(getString(R.string.for_y) + "\n" + animal_de + "\n" + getString(R.string.word));
+            txt_rel_three_you.setText(getString(R.string.for_y) + "\n" + planet_de + "\n" + getString(R.string.word));
+            txt_rel_five_you.setText(getString(R.string.for_y) + "\n" + professions_de + "\n" + getString(R.string.word));
+            txt_rel_six_you.setText(getString(R.string.for_y) + "\n" + transport_de + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("es")) {
             String animal_es = sharedPreferences.getString("ES_ANIMAL_CURSOR", "");
@@ -334,11 +334,11 @@ public class Store extends AppCompatActivity {
             String transport_es = sharedPreferences.getString("ES_TRANSPORT_CURSOR", "");
             int start_int_es = Integer.parseInt(sharedPreferences.getString("ES_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("ES_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("ES_HARD_CURSOR", ""));
             String starting_es = String.valueOf(start_int_es);
-            textView47.setText(getString(R.string.for_y) + "\n" + starting_es + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.for_y) + "\n" + animal_es + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.for_y) + "\n" + planet_es + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.for_y) + "\n" + professions_es + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.for_y) + "\n" + transport_es + "\n" + getString(R.string.word));
+            txt_rel_one_you.setText(getString(R.string.for_y) + "\n" + starting_es + "\n" + getString(R.string.word));
+            txt_rel_two_you.setText(getString(R.string.for_y) + "\n" + animal_es + "\n" + getString(R.string.word));
+            txt_rel_three_you.setText(getString(R.string.for_y) + "\n" + planet_es + "\n" + getString(R.string.word));
+            txt_rel_five_you.setText(getString(R.string.for_y) + "\n" + professions_es + "\n" + getString(R.string.word));
+            txt_rel_six_you.setText(getString(R.string.for_y) + "\n" + transport_es + "\n" + getString(R.string.word));
         }
     }
 

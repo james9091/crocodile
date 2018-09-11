@@ -6,21 +6,21 @@
     tools:context=".Store">
 
     <RelativeLayout
-        android:id="@+id/all"
+        android:id="@+id/rel_m"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         tools:ignore="UselessParent">
 
         <RelativeLayout
-            android:id="@+id/rela_two"
+            android:id="@+id/rel_green_light"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:layout_alignParentTop="true"
             android:background="#8CCB5E">
 
             <TextView
-                android:id="@+id/textView77"
+                android:id="@+id/txt_small_coin"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -33,7 +33,7 @@
                 android:layout_alignParentLeft="true" />
 
             <ImageView
-                android:id="@+id/imageView39"
+                android:id="@+id/ic_logo"
                 android:layout_width="75dp"
                 android:layout_height="match_parent"
                 android:paddingBottom="50dp"
@@ -42,7 +42,7 @@
                 android:contentDescription="@string/todo" />
 
             <TextView
-                android:id="@+id/textView68"
+                android:id="@+id/txt_crocodile_shop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="270dp"
@@ -55,7 +55,7 @@
                 tools:ignore="RtlSymmetry" />
 
             <ImageView
-                android:id="@+id/imageView28"
+                android:id="@+id/ic_cart"
                 android:layout_width="70dp"
                 android:layout_height="55dp"
                 android:layout_alignParentBottom="true"
@@ -65,29 +65,29 @@
                 android:paddingTop="3dp" />
 
             <ImageView
-                android:id="@+id/imageView30"
+                android:id="@+id/ic_wallet"
                 android:layout_width="70dp"
                 android:layout_height="55dp"
-                android:layout_alignLeft="@+id/textView44"
+                android:layout_alignLeft="@+id/txt_buy_new_words"
                 android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/textView44"
+                android:layout_alignStart="@+id/txt_buy_new_words"
                 android:contentDescription="@string/todo"
                 android:paddingBottom="2dp"
                 android:paddingTop="3dp" />
 
             <ImageView
-                android:id="@+id/imageView29"
+                android:id="@+id/ic_sale"
                 android:layout_width="70dp"
                 android:layout_height="55dp"
-                android:layout_alignEnd="@+id/textView44"
+                android:layout_alignEnd="@+id/txt_buy_new_words"
                 android:layout_alignParentBottom="true"
-                android:layout_alignRight="@+id/textView44"
+                android:layout_alignRight="@+id/txt_buy_new_words"
                 android:contentDescription="@string/todo"
                 android:paddingBottom="2dp"
                 android:paddingTop="3dp" />
 
             <ImageView
-                android:id="@+id/imageView27"
+                android:id="@+id/ic_crock_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/todo"
@@ -95,7 +95,7 @@
                 android:paddingTop="20dp" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/txt_buy_new_words"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -107,7 +107,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView45"
+                android:id="@+id/txt_crocodile_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -122,11 +122,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="900dp"
-            android:layout_below="@+id/rela_two"
+            android:layout_below="@+id/rel_green_light"
             android:background="#228B22	">
 
             <ScrollView
-                android:id="@+id/scrollView3"
+                android:id="@+id/scroll"
                 android:layout_width="360dp"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/text_User"
@@ -142,15 +142,15 @@
                     android:paddingRight="5dp">
 
                     <RelativeLayout
-                        android:id="@+id/six"
+                        android:id="@+id/rel_six"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:layout_below="@+id/two"
+                        android:layout_below="@+id/rel_two"
                         android:layout_marginTop="360dp"
                         android:background="@drawable/new_green">
 
                         <TextView
-                            android:id="@+id/textView64"
+                            android:id="@+id/txt_rel_six_buy"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -165,7 +165,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
-                            android:id="@+id/textView53"
+                            android:id="@+id/txt_rel_six_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -182,7 +182,7 @@
                             tools:ignore="RtlSymmetry" />
 
                         <TextView
-                            android:id="@+id/textView54"
+                            android:id="@+id/txt_rel_six_you"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -199,7 +199,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <ImageView
-                            android:id="@+id/img_ManEigh"
+                            android:id="@+id/ic_transport"
                             android:layout_width="85dp"
                             android:layout_height="100dp"
                             android:layout_alignParentTop="true"
@@ -207,7 +207,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/txt_transport"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -222,15 +222,15 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/five"
+                        android:id="@+id/rel_five"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:layout_below="@+id/two"
+                        android:layout_below="@+id/rel_two"
                         android:layout_marginTop="190dp"
                         android:background="@drawable/new_green">
 
                         <TextView
-                            android:id="@+id/textView65"
+                            android:id="@+id/txt_rel_five_buy"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -245,7 +245,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
-                            android:id="@+id/textView55"
+                            android:id="@+id/txt_rel_five_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -262,7 +262,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <TextView
-                            android:id="@+id/textView56"
+                            android:id="@+id/txt_rel_five_you"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -279,7 +279,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <ImageView
-                            android:id="@+id/img_ManEi"
+                            android:id="@+id/ic_professions"
                             android:layout_width="85dp"
                             android:layout_height="100dp"
                             android:layout_alignParentTop="true"
@@ -287,7 +287,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView99"
+                            android:id="@+id/txt_professions"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -302,7 +302,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/one"
+                        android:id="@+id/rel_one"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:layout_alignParentTop="true"
@@ -313,7 +313,7 @@
                         android:focusable="true">
 
                         <TextView
-                            android:id="@+id/textView46"
+                            android:id="@+id/txt_rel_one_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -330,7 +330,7 @@
                             tools:ignore="RtlSymmetry" />
 
                         <TextView
-                            android:id="@+id/textView47"
+                            android:id="@+id/txt_rel_one_you"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -347,7 +347,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <ImageView
-                            android:id="@+id/img_ManTwo"
+                            android:id="@+id/ic_starts"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_alignParentTop="true"
@@ -355,7 +355,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/txt_starts"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -368,7 +368,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView63"
+                            android:id="@+id/txt_rel_one_buy"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -384,15 +384,15 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/three"
+                        android:id="@+id/rel_three"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:layout_below="@+id/two"
+                        android:layout_below="@+id/rel_two"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/new_green">
 
                         <TextView
-                            android:id="@+id/textView66"
+                            android:id="@+id/txt_rel_three_buy"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -407,7 +407,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
-                            android:id="@+id/textView49"
+                            android:id="@+id/txt_rel_three_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -424,7 +424,7 @@
                             tools:ignore="RtlSymmetry" />
 
                         <TextView
-                            android:id="@+id/textView50"
+                            android:id="@+id/txt_rel_three_you"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -441,7 +441,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <ImageView
-                            android:id="@+id/img_ManTen"
+                            android:id="@+id/ic_planet"
                             android:layout_width="85dp"
                             android:layout_height="100dp"
                             android:layout_alignParentTop="true"
@@ -449,7 +449,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView90"
+                            android:id="@+id/txt_planet"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -464,17 +464,17 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/two"
+                        android:id="@+id/rel_two"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:layout_below="@+id/one"
+                        android:layout_below="@+id/rel_one"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/new_green"
                         android:clickable="true"
                         android:focusable="true">
 
                         <TextView
-                            android:id="@+id/textView67"
+                            android:id="@+id/txt_rel_two_buy"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
@@ -489,7 +489,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
-                            android:id="@+id/textView51"
+                            android:id="@+id/txt_rel_two_total"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -506,7 +506,7 @@
                             tools:ignore="RtlSymmetry" />
 
                         <TextView
-                            android:id="@+id/textView52"
+                            android:id="@+id/txt_rel_two_you"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -523,7 +523,7 @@
                             tools:ignore="RelativeOverlap,RtlSymmetry" />
 
                         <ImageView
-                            android:id="@+id/img_ManFi"
+                            android:id="@+id/ic_animals"
                             android:layout_width="85dp"
                             android:layout_height="100dp"
                             android:layout_alignParentTop="true"
@@ -531,7 +531,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView3"
+                            android:id="@+id/txt_animals"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
