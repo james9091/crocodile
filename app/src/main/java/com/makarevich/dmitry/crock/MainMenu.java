@@ -23,49 +23,49 @@ import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainMenu extends AppCompatActivity implements RewardedVideoAdListener {
-    private ImageView imageView3, imageView4, imageView5, img_Play, img_Book, img_Settings;
-    private ImageView img_exit, img_share;
+public class MainMenu extends AppCompatActivity {
+    private ImageView ic_logo_one, ic_logo_two, ic_logo_three, ic_play, ic_book, ic_settings,ic_coins;
+    private ImageView ic_exit, ic_share;
     private FirebaseAuth firebaseAuth;
-    private TextView text_User, textView2, textView3, textView5, text_User2, text_User3, textView75;
-    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917";
-    private static final String APP_ID = "ca-app-pub-3940256099942544~3347511713";
-    private RewardedVideoAd rewardedVideoAd;
+    private TextView txt_crocodile;
+    private TextView txt_start_game;
+    private TextView txt_play_store;
+    private TextView txt_settings;
+    private TextView txt_noisy;
+    private TextView txt_party;
     @SuppressLint("StaticFieldLeak")
     public static Context context_main_menu;
     DataBase dataBase;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         dataBase = new DataBase(this);
         context_main_menu = getApplicationContext();
-        text_User = findViewById(R.id.text_User);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView5 = findViewById(R.id.textView5);
-        textView75 = findViewById(R.id.textView75);
-        text_User2 = findViewById(R.id.text_User2);
-        text_User3 = findViewById(R.id.text_User3);
+        txt_crocodile = findViewById(R.id.txt_crocodile);
+        txt_start_game = findViewById(R.id.txt_start_game);
+        txt_play_store = findViewById(R.id.txt_play_store);
+        txt_settings = findViewById(R.id.txt_settings);
+        TextView txt_coins = findViewById(R.id.txt_coins);
+        txt_noisy = findViewById(R.id.txt_noisy);
+        txt_party = findViewById(R.id.txt_party);
         firebaseAuth = FirebaseAuth.getInstance();
-        imageView3 = findViewById(R.id.imageView3);
-        imageView4 = findViewById(R.id.imageView4);
-        imageView5 = findViewById(R.id.imageView5);
-        img_Play = findViewById(R.id.img_Play);
-        img_Book = findViewById(R.id.img_Book);
-        img_Settings = findViewById(R.id.img_Settings);
-        img_exit = findViewById(R.id.img_exit);
-        img_share = findViewById(R.id.img_share);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout fit = findViewById(R.id.fit);
+        ic_logo_one = findViewById(R.id.ic_logo_one);
+        ic_logo_two = findViewById(R.id.ic_logo_two);
+        ic_logo_three = findViewById(R.id.ic_logo_three);
+        ic_play = findViewById(R.id.ic_play);
+        ic_coins=findViewById(R.id.ic_coins);
+        ic_book = findViewById(R.id.ic_book);
+        ic_settings = findViewById(R.id.ic_settings);
+        ic_exit = findViewById(R.id.ic_exit);
+        ic_share = findViewById(R.id.ic_share);
+        RelativeLayout one = findViewById(R.id.rel_one);
+        RelativeLayout two = findViewById(R.id.rel_two);
+        RelativeLayout fit = findViewById(R.id.rel_three);
         PushPic();
         Font();
-        GetCoins();
-        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        rewardedVideoAd.setRewardedVideoAdListener(this);
-        MobileAds.initialize(this, APP_ID);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,31 +90,27 @@ public class MainMenu extends AppCompatActivity implements RewardedVideoAdListen
                 startActivity(store);
             }
         });
-        img_exit.setOnClickListener(new View.OnClickListener() {
+        ic_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ExitAcc();
             }
         });
-        img_share.setOnClickListener(new View.OnClickListener() {
+        ic_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ShareIt();
             }
         });
-        loadRewardedVideoAd();
         SharedPref.MainMenuSetNone();
+        String test = SharedPref.GetMainMenuCoins();
+        txt_coins.setText(test + " " + getString(R.string.coinss));
     }
 
     public static Context getContextMainMenu() {
         return context_main_menu;
     }
 
-    private void loadRewardedVideoAd() {
-        if (!rewardedVideoAd.isLoaded()) {
-            rewardedVideoAd.loadAd(AD_UNIT_ID, new AdRequest.Builder().build());
-        }
-    }
 
     @Override
     public void onBackPressed() {
@@ -129,53 +125,58 @@ public class MainMenu extends AppCompatActivity implements RewardedVideoAdListen
         int five = R.drawable.settings;
         int six = R.drawable.exit;
         int seven = R.drawable.share;
+        int eight = R.drawable.coins_three;
 
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView3);
+                .into(ic_logo_one);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView4);
+                .into(ic_logo_two);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView5);
+                .into(ic_logo_three);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_Play);
+                .into(ic_play);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_Book);
+                .into(ic_book);
         Glide
                 .with(this)
                 .load(five)
-                .into(img_Settings);
+                .into(ic_settings);
         Glide
                 .with(this)
                 .load(six)
-                .into(img_exit);
+                .into(ic_exit);
         Glide
                 .with(this)
                 .load(seven)
-                .into(img_share);
+                .into(ic_share);
+        Glide
+                .with(this)
+                .load(eight)
+                .into(ic_coins);
     }
 
     public void Font() {
-        text_User.setTypeface(Typeface.createFromAsset(
+        txt_crocodile.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_start_game.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_play_store.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView5.setTypeface(Typeface.createFromAsset(
+        txt_settings.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User2.setTypeface(Typeface.createFromAsset(
+        txt_noisy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User3.setTypeface(Typeface.createFromAsset(
+        txt_party.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -224,48 +225,4 @@ public class MainMenu extends AppCompatActivity implements RewardedVideoAdListen
             Toast.makeText(getApplicationContext(), getString(R.string.error), Toast.LENGTH_SHORT).show();
         }
     }
-
-    @SuppressLint("SetTextI18n")
-    public void GetCoins() {
-        String test = SharedPref.GetMainMenuCoins();
-        textView75.setText(test + " " + getString(R.string.coinss));
-    }
-
-    @Override
-    public void onRewardedVideoAdLoaded() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdOpened() {
-
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-        loadRewardedVideoAd();
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-        Toast.makeText(this, "Теперь вам доступен Экстра Уровень", Toast.LENGTH_LONG).show();
-        Intent ekstra = new Intent(MainMenu.this, DictionaryEkstra.class);
-        startActivity(ekstra);
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-
-    }
-
 }
