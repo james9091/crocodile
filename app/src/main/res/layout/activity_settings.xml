@@ -6,7 +6,7 @@
     tools:context=".Settings">
 
     <RelativeLayout
-        android:id="@+id/all"
+        android:id="@+id/rel_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -15,7 +15,7 @@
         android:layout_alignParentLeft="true">
 
         <RelativeLayout
-            android:id="@+id/rela_two"
+            android:id="@+id/rel_light_green"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_alignParentTop="true"
@@ -26,16 +26,16 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="900dp"
-            android:layout_below="@+id/rela_two"
+            android:layout_below="@+id/rel_light_green"
             android:background="#228B22	">
 
         </RelativeLayout>
 
         <ScrollView
-            android:id="@+id/scrollView3"
+            android:id="@+id/scroll"
             android:layout_width="360dp"
             android:layout_height="match_parent"
-            android:layout_below="@+id/text_User"
+            android:layout_below="@+id/txt_settings"
             android:layout_centerHorizontal="true"
             android:scrollbars="none">
 
@@ -45,7 +45,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:id="@+id/one"
+                    android:id="@+id/rel_one"
                     android:layout_width="350dp"
                     android:layout_height="150dp"
                     android:layout_alignParentTop="true"
@@ -56,12 +56,12 @@
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/imageView22"
+                        android:id="@+id/ic_russian"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/imageView25"
+                        android:layout_alignTop="@+id/ic_spain"
                         android:layout_marginEnd="70dp"
                         android:layout_marginRight="70dp"
                         android:contentDescription="@string/todo"
@@ -69,7 +69,7 @@
                         android:paddingRight="5dp" />
 
                     <ImageView
-                        android:id="@+id/imageView25"
+                        android:id="@+id/ic_spain"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentEnd="true"
@@ -83,12 +83,12 @@
                         android:paddingRight="5dp" />
 
                     <ImageView
-                        android:id="@+id/imageView24"
+                        android:id="@+id/ic_deutch"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignTop="@+id/imageView22"
+                        android:layout_alignTop="@+id/ic_russian"
                         android:layout_marginLeft="15dp"
                         android:layout_marginStart="15dp"
                         android:contentDescription="@string/todo"
@@ -96,20 +96,20 @@
                         android:paddingRight="5dp" />
 
                     <ImageView
-                        android:id="@+id/imageView23"
+                        android:id="@+id/ic_english"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
-                        android:layout_alignTop="@+id/imageView22"
-                        android:layout_marginLeft="71dp"
-                        android:layout_marginStart="71dp"
+                        android:layout_alignTop="@+id/ic_russian"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginStart="70dp"
                         android:contentDescription="@string/todo"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp" />
 
                     <ImageView
-                        android:id="@+id/img_Play"
+                        android:id="@+id/ic_play"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_alignParentTop="true"
@@ -120,11 +120,11 @@
                         android:paddingTop="8dp" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/txt_change_lang"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_alignParentTop="false"
-                        android:layout_below="@+id/img_Play"
+                        android:layout_below="@+id/ic_play"
                         android:paddingTop="5dp"
                         android:text="@string/change_language"
                         android:textAlignment="center"
@@ -134,26 +134,26 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/five"
+                    android:id="@+id/rel_five"
                     android:layout_width="350dp"
                     android:layout_height="150dp"
-                    android:layout_below="@+id/two"
+                    android:layout_below="@+id/rel_two"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/new_green">
 
                     <ImageView
-                        android:id="@+id/img_Ekstr"
+                        android:id="@+id/ic_developer"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_alignParentTop="true"
                         android:contentDescription="@string/todo" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/txt_about_developer"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_alignParentTop="false"
-                        android:layout_below="@+id/img_Ekstr"
+                        android:layout_below="@+id/ic_developer"
                         android:paddingTop="5dp"
                         android:text="@string/about_developer"
                         android:textAlignment="center"
@@ -164,17 +164,17 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/two"
+                    android:id="@+id/rel_two"
                     android:layout_width="350dp"
                     android:layout_height="150dp"
-                    android:layout_below="@+id/one"
+                    android:layout_below="@+id/rel_one"
                     android:layout_marginTop="19dp"
                     android:background="@drawable/new_green"
                     android:clickable="true"
                     android:focusable="true">
 
                     <ImageView
-                        android:id="@+id/img_Book"
+                        android:id="@+id/ic_book"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_alignParentTop="true"
@@ -182,11 +182,11 @@
                         android:paddingTop="8dp" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/txt_we_plays"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_alignParentTop="false"
-                        android:layout_below="@+id/img_Book"
+                        android:layout_below="@+id/ic_book"
                         android:paddingTop="5dp"
                         android:text="Наши игры"
                         android:textAlignment="center"
@@ -199,7 +199,7 @@
         </ScrollView>
 
         <TextView
-            android:id="@+id/text_User"
+            android:id="@+id/txt_settings"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -211,7 +211,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/text_User2"
+            android:id="@+id/txt_do"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -226,7 +226,7 @@
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/text_User3"
+            android:id="@+id/txt_choice"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -241,7 +241,7 @@
             tools:ignore="RtlSymmetry" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/ic_logo_large"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -249,7 +249,7 @@
             android:paddingBottom="5dp" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/ic_logo_small"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"
@@ -261,7 +261,7 @@
             tools:ignore="RtlSymmetry" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ic_logo_small_two"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_alignParentTop="true"

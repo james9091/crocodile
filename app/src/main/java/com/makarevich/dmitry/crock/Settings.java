@@ -16,8 +16,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class Settings extends AppCompatActivity {
-    private ImageView imageView3, imageView4, imageView5, img_Play, img_Book, img_Ekstr, imageView24, imageView23, imageView22, imageView25;
-    private TextView text_User, text_User2, text_User3, textView2, textView3, textView4;
+    private ImageView ic_logo_large, ic_logo_small, ic_logo_small_two, ic_play, ic_book, ic_developer, ic_deutch, ic_russian, ic_english, ic_spain;
+    private TextView txt_settings, txt_do, txt_choice, txt_change_lang, txt_we_plays, txt_about_developer;
     @SuppressLint("StaticFieldLeak")
     public static Context context_settings;
 
@@ -26,26 +26,27 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         context_settings = getApplicationContext();
-        RelativeLayout three = findViewById(R.id.five);
-        text_User = findViewById(R.id.text_User);
-        text_User2 = findViewById(R.id.text_User2);
-        text_User3 = findViewById(R.id.text_User3);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView4 = findViewById(R.id.textView4);
-        imageView25 = findViewById(R.id.imageView25);
-        imageView24 = findViewById(R.id.imageView24);
-        imageView23 = findViewById(R.id.imageView23);
-        imageView22 = findViewById(R.id.imageView22);
-        imageView3 = findViewById(R.id.imageView3);
-        imageView4 = findViewById(R.id.imageView4);
-        imageView5 = findViewById(R.id.imageView5);
-        img_Play = findViewById(R.id.img_Play);
-        img_Book = findViewById(R.id.img_Book);
-        img_Ekstr = findViewById(R.id.img_Ekstr);
+        RelativeLayout three = findViewById(R.id.rel_five);
+        txt_settings = findViewById(R.id.txt_settings);
+        txt_do = findViewById(R.id.txt_do);
+        txt_choice = findViewById(R.id.txt_choice);
+        txt_change_lang = findViewById(R.id.txt_change_lang);
+        txt_we_plays = findViewById(R.id.txt_we_plays);
+        txt_about_developer = findViewById(R.id.txt_about_developer);
+        ic_spain = findViewById(R.id.ic_spain);
+        ic_deutch = findViewById(R.id.ic_deutch);
+        ic_russian = findViewById(R.id.ic_russian);
+        ic_english = findViewById(R.id.ic_english);
+        ic_logo_large = findViewById(R.id.ic_logo_large);
+        ic_logo_small = findViewById(R.id.ic_logo_small);
+        ic_logo_small_two = findViewById(R.id.ic_logo_small_two);
+        ic_play = findViewById(R.id.ic_play);
+        ic_book = findViewById(R.id.ic_book);
+        ic_developer = findViewById(R.id.ic_developer);
         PushImage();
         Font();
-        img_Play.setOnClickListener(new View.OnClickListener() {
+
+        ic_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPref.LangRu();
@@ -70,28 +71,28 @@ public class Settings extends AppCompatActivity {
             }
 
         });
-        imageView25.setOnClickListener(new View.OnClickListener() {
+        ic_spain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ChangeLanguage change = new ChangeLanguage();
                 change.Spain();
             }
         });
-        imageView22.setOnClickListener(new View.OnClickListener() {
+        ic_english.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ChangeLanguage change = new ChangeLanguage();
                 change.Russian();
             }
         });
-        imageView23.setOnClickListener(new View.OnClickListener() {
+        ic_russian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ChangeLanguage change = new ChangeLanguage();
                 change.English();
             }
         });
-        imageView24.setOnClickListener(new View.OnClickListener() {
+        ic_deutch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ChangeLanguage change = new ChangeLanguage();
@@ -122,57 +123,57 @@ public class Settings extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView3);
+                .into(ic_logo_large);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView4);
+                .into(ic_logo_small);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView5);
+                .into(ic_logo_small_two);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_Play);
+                .into(ic_play);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_Book);
+                .into(ic_book);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_Ekstr);
+                .into(ic_developer);
         Glide
                 .with(this)
                 .load(five)
-                .into(imageView24);
+                .into(ic_deutch);
         Glide
                 .with(this)
                 .load(six)
-                .into(imageView23);
+                .into(ic_russian);
         Glide
                 .with(this)
                 .load(seven)
-                .into(imageView22);
+                .into(ic_english);
         Glide
                 .with(this)
                 .load(eight)
-                .into(imageView25);
+                .into(ic_spain);
     }
 
     public void Font() {
-        text_User.setTypeface(Typeface.createFromAsset(
+        txt_settings.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_change_lang.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_we_plays.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView4.setTypeface(Typeface.createFromAsset(
+        txt_about_developer.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User2.setTypeface(Typeface.createFromAsset(
+        txt_do.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User3.setTypeface(Typeface.createFromAsset(
+        txt_choice.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 }
