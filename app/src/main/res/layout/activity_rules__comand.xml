@@ -6,7 +6,7 @@
     tools:context=".RulesComand">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_skip_rules_comand"
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:layout_alignParentBottom="true"
@@ -18,20 +18,20 @@
         android:textStyle="bold" />
 
     <RelativeLayout
-        android:id="@+id/reel_twoo"
+        android:id="@+id/rel_two"
         android:layout_width="match_parent"
         android:layout_height="1000dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_below="@+id/rel_onn"
+        android:layout_below="@+id/rel_one"
         android:layout_marginTop="279dp"
         android:background="#228B22	">
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rel_onn"
+        android:id="@+id/rel_one"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentLeft="true"
@@ -40,7 +40,7 @@
         android:background="#8CCB5E">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/txt_rules_comand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -54,12 +54,12 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txt_comand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView8"
+            android:layout_below="@+id/txt_rules_comand"
             android:text="@string/comand"
             android:textAlignment="center"
             android:textColor="#FFF"
@@ -68,7 +68,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/reel_three"
+        android:id="@+id/rel_three"
         android:layout_width="300dp"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
@@ -79,7 +79,7 @@
             android:layout_height="250dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView">
+            android:layout_below="@+id/ic_rules_comand">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/txt_rules_comand_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
@@ -103,7 +103,7 @@
         </ScrollView>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ic_rules_comand"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentTop="true"
