@@ -13,19 +13,19 @@ import com.bumptech.glide.Glide;
 
 public class RulesCommandToCommand extends AppCompatActivity {
 
-    private Button button3;
-    private ImageView imageView;
-    private TextView textView8,textView11,textView12;
+    private Button btn_skip_rules_comandcomand;
+    private ImageView ic_rules_comandcomand;
+    private TextView txt_rules_comandcomand,txt_comand_vs_comand,txt_rules_comandcomand_main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules__command_to_command);
-        button3=findViewById(R.id.button3);
-        imageView=findViewById(R.id.imageView);
-        textView8=findViewById(R.id.textView8);
-        textView11=findViewById(R.id.textView11);
-        textView12=findViewById(R.id.textView12);
-        button3.setOnClickListener(new View.OnClickListener() {
+        btn_skip_rules_comandcomand=findViewById(R.id.btn_skip_rules_comandcomand);
+        ic_rules_comandcomand=findViewById(R.id.ic_rules_comandcomand);
+        txt_rules_comandcomand=findViewById(R.id.txt_rules_comandcomand);
+        txt_comand_vs_comand=findViewById(R.id.txt_comand_vs_comand);
+        txt_rules_comandcomand_main=findViewById(R.id.txt_rules_comandcomand_main);
+        btn_skip_rules_comandcomand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent dictionary = new Intent(RulesCommandToCommand.this , DictionaryAll.class);
@@ -45,16 +45,16 @@ public class RulesCommandToCommand extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView);
+                .into(ic_rules_comandcomand);
     }
     public void Font() {
-        textView8.setTypeface(Typeface.createFromAsset(
+        txt_rules_comandcomand.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView11.setTypeface(Typeface.createFromAsset(
+        txt_comand_vs_comand.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView12.setTypeface(Typeface.createFromAsset(
+        txt_rules_comandcomand_main.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button3.setTypeface(Typeface.createFromAsset(
+        btn_skip_rules_comandcomand.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 }
