@@ -52,10 +52,10 @@ import java.util.List;
 import java.util.Random;
 
 public class One_Time extends AppCompatActivity {
-    private ImageView imageView7, imageView8, imageView9, imageView21;
-    private Button button3, button9;
-    private TextView textView15, textView22, textView21, textView71, textView18, textView8, textView11, textView82, textView83;
-    private RelativeLayout reel_back;
+    private ImageView ic_pic_one, ic_pic_two, ic_gen, ic_pic_three;
+    private Button btn_back, btn_start_game_counter;
+    private TextView txt_timer, txt_count_two, txt_count_one, txt_player_one, txt_word, txt_one_vs_one, textView11, txt_counter, txt_game_starts;
+    private RelativeLayout rel_back;
     @SuppressLint("StaticFieldLeak")
     public static Context context_one_time;
 
@@ -64,45 +64,45 @@ public class One_Time extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one__time);
         context_one_time = getApplicationContext();
-        textView15 = findViewById(R.id.textView15);
-        textView22 = findViewById(R.id.textView22);
-        textView21 = findViewById(R.id.textView21);
-        textView71 = findViewById(R.id.textView71);
-        textView82 = findViewById(R.id.textView82);
-        textView18 = findViewById(R.id.textView18);
-        imageView7 = findViewById(R.id.imageView7);
-        imageView8 = findViewById(R.id.imageView8);
-        imageView9 = findViewById(R.id.imageView9);
-        imageView21 = findViewById(R.id.imageView21);
-        textView8 = findViewById(R.id.textView8);
+        txt_timer = findViewById(R.id.txt_timer);
+        txt_count_two = findViewById(R.id.txt_count_two);
+        txt_count_one = findViewById(R.id.txt_count_one);
+        txt_player_one = findViewById(R.id.txt_player_one);
+        txt_counter = findViewById(R.id.txt_counter);
+        txt_word = findViewById(R.id.txt_word);
+        ic_pic_one = findViewById(R.id.ic_pic_one);
+        ic_pic_two = findViewById(R.id.ic_pic_two);
+        ic_gen = findViewById(R.id.ic_gen);
+        ic_pic_three = findViewById(R.id.ic_pic_three);
+        txt_one_vs_one = findViewById(R.id.txt_one_vs_one);
         textView11 = findViewById(R.id.textView11);
-        textView83 = findViewById(R.id.textView83);
-        button3 = findViewById(R.id.button3);
-        button9 = findViewById(R.id.button9);
-        reel_back = findViewById(R.id.reel_back);
+        txt_game_starts = findViewById(R.id.txt_game_starts);
+        btn_back = findViewById(R.id.btn_back);
+        btn_start_game_counter = findViewById(R.id.btn_start_game_counter);
+        rel_back = findViewById(R.id.rel_back);
         PushIm();
         Font();
-        button3.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent back = new Intent(One_Time.this, Play_Mode.class);
                 startActivity(back);
             }
         });
-        button9.setOnClickListener(new View.OnClickListener() {
+        btn_start_game_counter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BackCount();
             }
         });
-        imageView7.setOnClickListener(new View.OnClickListener() {
+        ic_pic_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PlayerOne();
                 WordsOneTime();
             }
         });
-        imageView8.setOnClickListener(new View.OnClickListener() {
+        ic_pic_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PlayerTwo();
@@ -118,11 +118,11 @@ public class One_Time extends AppCompatActivity {
     }
 
     public void Font() {
-        textView8.setTypeface(Typeface.createFromAsset(
+        txt_one_vs_one.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
         textView11.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button3.setTypeface(Typeface.createFromAsset(
+        btn_back.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -137,35 +137,35 @@ public class One_Time extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView9);
+                .into(ic_gen);
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView21);
+                .into(ic_pic_three);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView7);
+                .into(ic_pic_one);
         Glide
                 .with(this)
                 .load(four)
-                .into(imageView8);
+                .into(ic_pic_two);
     }
 
     private void BackCount() {
-        button9.setVisibility(View.INVISIBLE);
-        textView82.setVisibility(View.VISIBLE);
-        textView83.setVisibility(View.VISIBLE);
+        btn_start_game_counter.setVisibility(View.INVISIBLE);
+        txt_counter.setVisibility(View.VISIBLE);
+        txt_game_starts.setVisibility(View.VISIBLE);
         final CountDownTimer yourCountDownTimer = new CountDownTimer(6000, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                textView82.setText(String.valueOf(millisUntilFinished / 1000));
+                txt_counter.setText(String.valueOf(millisUntilFinished / 1000));
             }
 
             public void onFinish() {
-                textView82.setVisibility(View.INVISIBLE);
-                textView83.setVisibility(View.INVISIBLE);
-                reel_back.setVisibility(View.INVISIBLE);
+                txt_counter.setVisibility(View.INVISIBLE);
+                txt_game_starts.setVisibility(View.INVISIBLE);
+                rel_back.setVisibility(View.INVISIBLE);
                 WordsOneTime();
                 PlayerOne();
             }
@@ -173,65 +173,65 @@ public class One_Time extends AppCompatActivity {
     }
 
     private void PlayerOne() {
-        int Timer = Integer.parseInt(SharedPref.ReturnTimer())*1000;
-        textView71.setText(getString(R.string.player_one));
-        imageView9.setVisibility(View.VISIBLE);
+        int Timer = Integer.parseInt(SharedPref.ReturnTimer()) * 1000;
+        txt_player_one.setText(getString(R.string.player_one));
+        ic_gen.setVisibility(View.VISIBLE);
         final CountDownTimer yourCountDownTimer = new CountDownTimer(Timer, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                textView15.setText(getString(R.string.ostalos) + millisUntilFinished / 1000 + " " + getString(R.string.seconds_time));
+                txt_timer.setText(getString(R.string.ostalos) + millisUntilFinished / 1000 + " " + getString(R.string.seconds_time));
             }
 
             public void onFinish() {
-                textView15.setText(getString(R.string.time_the_end));
-                textView71.setText(" ");
-                imageView9.setVisibility(View.INVISIBLE);
+                txt_timer.setText(getString(R.string.time_the_end));
+                txt_player_one.setText(" ");
+                ic_gen.setVisibility(View.INVISIBLE);
                 WordsOneTime();
                 PlayerTwo();
             }
         }
                 .start();
-        imageView9.setOnClickListener(new View.OnClickListener() {
+        ic_gen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 yourCountDownTimer.cancel();
-                textView15.setText(" ");
-                int score = Integer.parseInt(textView21.getText().toString()) + 1;
-                textView21.setText(String.valueOf(score));
-                imageView9.setVisibility(View.INVISIBLE);
+                txt_timer.setText(" ");
+                int score = Integer.parseInt(txt_count_one.getText().toString()) + 1;
+                txt_count_one.setText(String.valueOf(score));
+                ic_gen.setVisibility(View.INVISIBLE);
                 PlayerTwo();
             }
         });
     }
 
     private void PlayerTwo() {
-        int Timer = Integer.parseInt(SharedPref.ReturnTimer())*1000;
-        textView71.setText(getString(R.string.player_two));
-        imageView21.setVisibility(View.VISIBLE);
+        int Timer = Integer.parseInt(SharedPref.ReturnTimer()) * 1000;
+        txt_player_one.setText(getString(R.string.player_two));
+        ic_pic_three.setVisibility(View.VISIBLE);
         final CountDownTimer yourCountDownTimer = new CountDownTimer(Timer, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                textView15.setText(getString(R.string.ostalos) + millisUntilFinished / 1000 + " " + getString(R.string.seconds_time));
+                txt_timer.setText(getString(R.string.ostalos) + millisUntilFinished / 1000 + " " + getString(R.string.seconds_time));
             }
 
             public void onFinish() {
-                textView15.setText(R.string.time_the_end);
-                textView71.setText(" ");
-                imageView21.setVisibility(View.INVISIBLE);
+                txt_timer.setText(R.string.time_the_end);
+                txt_player_one.setText(" ");
+                ic_pic_three.setVisibility(View.INVISIBLE);
                 WordsOneTime();
                 PlayerOne();
 
             }
         }
                 .start();
-        imageView21.setOnClickListener(new View.OnClickListener() {
+        ic_pic_three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 yourCountDownTimer.cancel();
-                textView15.setText(" ");
-                int score = Integer.parseInt(textView22.getText().toString()) + 1;
-                textView22.setText(String.valueOf(score));
-                imageView21.setVisibility(View.INVISIBLE);
+                txt_timer.setText(" ");
+                int score = Integer.parseInt(txt_count_two.getText().toString()) + 1;
+                txt_count_two.setText(String.valueOf(score));
+                ic_pic_three.setVisibility(View.INVISIBLE);
                 PlayerOne();
             }
         });
@@ -255,7 +255,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -269,7 +269,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -282,7 +282,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -295,7 +295,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -308,7 +308,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -321,7 +321,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -334,7 +334,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -347,7 +347,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
 
         }
@@ -364,7 +364,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -378,7 +378,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -391,7 +391,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -404,7 +404,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -417,7 +417,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -430,7 +430,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -443,7 +443,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -456,7 +456,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
 
         }
@@ -472,7 +472,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -486,7 +486,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -499,7 +499,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -512,7 +512,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -525,7 +525,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -538,7 +538,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -551,7 +551,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -564,7 +564,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
 
         }
@@ -580,7 +580,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -594,7 +594,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -607,7 +607,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -620,7 +620,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -633,7 +633,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -646,7 +646,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -659,7 +659,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -672,7 +672,7 @@ public class One_Time extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_word.setText(string_ok);
             }
         }
     }
