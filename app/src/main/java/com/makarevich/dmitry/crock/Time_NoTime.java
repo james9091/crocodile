@@ -1,5 +1,6 @@
 package com.makarevich.dmitry.crock;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,10 +19,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 public class Time_NoTime extends AppCompatActivity {
-    private ImageView imageView2, imageView6;
-    private TextView textView8, textView11, textView14, textView, textView13, textView79, textView80;
-    private Button button3, button7, button8;
-    private RelativeLayout reel_white, reel_timer;
+    private ImageView ic_time, ic_normal;
+    private TextView txt_crocodile_main, txt_game_mode, txt_make_selection, txt_on_time, txt_normal, txt_round_time, txt_time;
+    private Button btn_start_game, btn_plus_ten, btn_minus_ten;
+    private RelativeLayout rel_small_white, rel_timer;
+    @SuppressLint("StaticFieldLeak")
     public static Context contextTimeNoTime;
 
     @Override
@@ -29,52 +31,47 @@ public class Time_NoTime extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time__no_time);
         contextTimeNoTime = getApplicationContext();
-        button3 = findViewById(R.id.button3);
-        imageView2 = findViewById(R.id.imageView2);
-        imageView6 = findViewById(R.id.imageView6);
-        textView8 = findViewById(R.id.textView8);
-        textView11 = findViewById(R.id.textView11);
-        textView14 = findViewById(R.id.textView14);
-        textView = findViewById(R.id.textView);
-        textView80 = findViewById(R.id.textView80);
-        textView13 = findViewById(R.id.textView13);
-        textView79 = findViewById(R.id.textView79);
-        button8 = findViewById(R.id.button8);
-        button7 = findViewById(R.id.button7);
-        reel_white = findViewById(R.id.reel_white);
-        reel_timer = findViewById(R.id.reel_timer);
-        button3.setOnClickListener(new View.OnClickListener() {
+        btn_start_game = findViewById(R.id.btn_start_game);
+        btn_minus_ten = findViewById(R.id.btn_minus_ten);
+        btn_plus_ten = findViewById(R.id.btn_plus_ten);
+        ic_time = findViewById(R.id.ic_time);
+        ic_normal = findViewById(R.id.ic_normal);
+        txt_crocodile_main = findViewById(R.id.txt_crocodile_main);
+        txt_game_mode = findViewById(R.id.txt_game_mode);
+        txt_make_selection = findViewById(R.id.txt_make_selection);
+        txt_on_time = findViewById(R.id.txt_on_time);
+        txt_time = findViewById(R.id.txt_time);
+        txt_normal = findViewById(R.id.txt_normal);
+        txt_round_time = findViewById(R.id.txt_round_time);
+        rel_small_white = findViewById(R.id.rel_small_white);
+        rel_timer = findViewById(R.id.rel_timer);
+
+        btn_start_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent back = new Intent(Time_NoTime.this, Dictionary_Level.class);
-                //startActivity(back);
                 NextP();
             }
         });
         PushImage();
-        imageView2.setOnClickListener(new View.OnClickListener() {
+        ic_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //  Intent time = new Intent(Time_NoTime.this, One_Time.class);
-                //  startActivity(time);
                 StartTime();
             }
         });
-        imageView6.setOnClickListener(new View.OnClickListener() {
+        ic_normal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent no_time = new Intent(Time_NoTime.this, One_Normal.class);
-                // startActivity(no_time);
                 StartNoTime();
             }
         });
-        button7.setOnClickListener(new View.OnClickListener() {
+        btn_plus_ten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MinusTenSec();
             }
         });
-        button8.setOnClickListener(new View.OnClickListener() {
+        btn_minus_ten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PlusTenSec();
@@ -88,23 +85,23 @@ public class Time_NoTime extends AppCompatActivity {
     }
 
     private void Font() {
-        textView8.setTypeface(Typeface.createFromAsset(
+        txt_crocodile_main.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView11.setTypeface(Typeface.createFromAsset(
+        txt_game_mode.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView.setTypeface(Typeface.createFromAsset(
+        txt_on_time.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView13.setTypeface(Typeface.createFromAsset(
+        txt_normal.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView14.setTypeface(Typeface.createFromAsset(
+        txt_make_selection.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button3.setTypeface(Typeface.createFromAsset(
+        btn_start_game.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button7.setTypeface(Typeface.createFromAsset(
+        btn_plus_ten.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button8.setTypeface(Typeface.createFromAsset(
+        btn_minus_ten.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView79.setTypeface(Typeface.createFromAsset(
+        txt_round_time.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -121,47 +118,47 @@ public class Time_NoTime extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView2);
+                .into(ic_time);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView6);
+                .into(ic_normal);
 
     }
 
     private void StartTime() {
-        textView13.setTextColor(Color.parseColor("#FFFFFF"));
-        textView.setTextColor(Color.parseColor("#8CCB5E"));
-        reel_white.setVisibility(View.VISIBLE);
-        reel_timer.setVisibility(View.VISIBLE);
+        txt_normal.setTextColor(Color.parseColor("#FFFFFF"));
+        txt_on_time.setTextColor(Color.parseColor("#8CCB5E"));
+        rel_small_white.setVisibility(View.VISIBLE);
+        rel_timer.setVisibility(View.VISIBLE);
         SharedPref.LastSetTime();
     }
 
     private void StartNoTime() {
-        textView.setTextColor(Color.parseColor("#FFFFFF"));
-        textView13.setTextColor(Color.parseColor("#8CCB5E"));
-        reel_white.setVisibility(View.INVISIBLE);
-        reel_timer.setVisibility(View.INVISIBLE);
+        txt_on_time.setTextColor(Color.parseColor("#FFFFFF"));
+        txt_normal.setTextColor(Color.parseColor("#8CCB5E"));
+        rel_small_white.setVisibility(View.INVISIBLE);
+        rel_timer.setVisibility(View.INVISIBLE);
         SharedPref.LastSetNoTime();
     }
 
     private void MinusTenSec() {
-        int timer = Integer.parseInt(textView80.getText().toString());
+        int timer = Integer.parseInt(txt_time.getText().toString());
         if (timer > 20) {
             int ok = timer - 10;
-            textView80.setText(String.valueOf(ok));
+            txt_time.setText(String.valueOf(ok));
         } else {
             Toast.makeText(contextTimeNoTime, "Длительность раунда не может быть менее 20 секунд", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void PlusTenSec() {
-        int timer = Integer.parseInt(textView80.getText().toString());
+        int timer = Integer.parseInt(txt_time.getText().toString());
         if (timer == 200) {
             Toast.makeText(contextTimeNoTime, "Данная игра не предусматривает такие длинные раунды", Toast.LENGTH_SHORT).show();
         } else {
             int ok = timer + 10;
-            textView80.setText(String.valueOf(ok));
+            txt_time.setText(String.valueOf(ok));
         }
     }
 
@@ -170,7 +167,7 @@ public class Time_NoTime extends AppCompatActivity {
         if (proof.contains("none")) {
             Toast.makeText(contextTimeNoTime, "Выберите режим игры в котором вы хотите играть", Toast.LENGTH_SHORT).show();
         } else {
-            String time = textView80.getText().toString();
+            String time = txt_time.getText().toString();
             Context applicationContext = Time_NoTime.getContextTimeNoTime();
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
             SharedPreferences.Editor edit = sharedPreferences.edit();

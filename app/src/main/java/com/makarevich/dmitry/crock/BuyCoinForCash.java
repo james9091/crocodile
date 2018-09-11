@@ -1,5 +1,6 @@
 package com.makarevich.dmitry.crock;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,8 +17,10 @@ public class BuyCoinForCash extends AppCompatActivity {
 
     private ImageView ic_main_logo, ic_coin_wallet, ic_coin_bag, ic_gold_mine, ic_pile;
     private TextView txt_crocodile, txt_coins, txt_buy_coins, txt_coin_bag, txt_buy_pile_c, txt_buy_gold_mine, txt_crocko_shop, txt_buy_coin_bag, txt_gold_mine, txt_buy_pile;
+    @SuppressLint("StaticFieldLeak")
     public static Context contex_cash_coins;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +49,7 @@ public class BuyCoinForCash extends AppCompatActivity {
         txt_crocko_shop.startAnimation(anim);
         Font();
         PushImage();
-        SharedPref sharedPref = new SharedPref();
-        String test = sharedPref.getCoinShop();
+        String test = SharedPref.getCoinShop();
         txt_coins.setText(test + " " + getString(R.string.coinss));
     }
 
