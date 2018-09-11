@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu">
+
+    <RelativeLayout
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:id="@+id/rela_two"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:background="#8CCB5E">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rela"
+            android:layout_width="match_parent"
+            android:layout_height="900dp"
+            android:layout_below="@+id/rela_two"
+            android:background="#3B7D35">
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="360dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_User"
+            android:layout_centerHorizontal="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/fit"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/two"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/new_green"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:id="@+id/img_Settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/todo"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="false"
+                        android:layout_below="@+id/img_Settings"
+                        android:paddingTop="5dp"
+                        android:text="@string/settings"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/one"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/new_green"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/textView2"
+                        android:text="@string/shared"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/img_exit"
+                        android:layout_alignStart="@+id/img_exit"
+                        android:layout_alignTop="@+id/textView2"
+                        android:text="@string/exito"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_share"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/todo"
+                        android:paddingTop="10dp" />
+
+                    <ImageView
+                        android:id="@+id/img_exit"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/todo"
+                        android:paddingTop="10dp" />
+
+                    <ImageView
+                        android:id="@+id/img_Play"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/todo"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="false"
+                        android:layout_below="@+id/img_Play"
+                        android:paddingTop="5dp"
+                        android:text="@string/start_play"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/two"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/one"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/new_green"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/textView75"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/img_Book"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true" />
+
+                    <ImageView
+                        android:id="@+id/imageView38"
+                        android:layout_width="75dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="10dp"
+                        app:srcCompat="@drawable/coins_three"
+                        android:layout_alignParentRight="true"
+                        android:contentDescription="@string/todo" />
+
+                    <ImageView
+                        android:id="@+id/img_Book"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:contentDescription="@string/todo"
+                        android:paddingTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentTop="false"
+                        android:layout_below="@+id/img_Book"
+                        android:paddingTop="5dp"
+                        android:text="@string/shop"
+                        android:textAlignment="center"
+                        android:textColor="#FFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/text_User"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:paddingTop="70dp"
+            android:text="@string/crocodile"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_User2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:paddingEnd="250dp"
+            android:paddingRight="250dp"
+            android:paddingTop="70dp"
+            android:text="@string/noisy"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/text_User3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="250dp"
+            android:paddingStart="250dp"
+            android:paddingTop="70dp"
+            android:text="@string/party"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/todo"
+            android:paddingBottom="5dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/todo"
+            android:paddingBottom="30dp"
+            android:paddingEnd="250dp"
+            android:paddingRight="250dp"
+            android:paddingTop="30dp"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="30dp"
+            android:paddingLeft="250dp"
+            android:paddingTop="30dp"
+            android:paddingStart="250dp"
+            tools:ignore="RtlSymmetry"
+            android:contentDescription="@string/todo" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
