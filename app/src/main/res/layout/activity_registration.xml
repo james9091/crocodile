@@ -7,15 +7,15 @@
     tools:context=".Registration">
 
     <RelativeLayout
-        android:id="@+id/tell"
+        android:id="@+id/rel_registration"
         android:layout_width="300dp"
         android:layout_height="350dp"
-        android:layout_below="@+id/imageView35"
+        android:layout_below="@+id/ic_main_logo_registration"
         android:layout_centerHorizontal="true"
         android:background="@drawable/new_green">
 
         <Button
-            android:id="@+id/btn_Registration"
+            android:id="@+id/btn_registration"
             android:layout_width="180dp"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView73"
+            android:id="@+id/txt_registration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -38,17 +38,8 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/img_Form"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_above="@+id/textView9"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/todo"
-            android:visibility="gone" />
-
         <Button
-            android:id="@+id/btn_LogIn"
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -62,10 +53,10 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txt_enter_email"
             android:layout_width="213dp"
             android:layout_height="30dp"
-            android:layout_above="@+id/et_MailR"
+            android:layout_above="@+id/edit_mail"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="-100dp"
             android:paddingTop="5dp"
@@ -73,17 +64,17 @@
             android:textColor="#FFF" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/txt_enter_password"
             android:layout_width="213dp"
             android:layout_height="30dp"
-            android:layout_above="@+id/et_PassR"
+            android:layout_above="@+id/edit_password"
             android:layout_centerHorizontal="true"
             android:paddingTop="5dp"
             android:text="@string/input_password"
             android:textColor="#FFF" />
 
         <EditText
-            android:id="@+id/et_MailR"
+            android:id="@+id/edit_mail"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_alignParentTop="true"
@@ -100,7 +91,7 @@
             tools:ignore="RtlSymmetry" />
 
         <EditText
-            android:id="@+id/et_PassR"
+            android:id="@+id/edit_password"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
@@ -114,15 +105,15 @@
             android:paddingStart="6dp"
             android:textColor="#82B47B"
             android:textColorHint="#82B47B"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,TextFields" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_Registration3"
+        android:id="@+id/btn_skip_reg"
         android:layout_width="150dp"
         android:layout_height="35dp"
-        android:layout_below="@+id/tell"
+        android:layout_below="@+id/rel_registration"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:background="@drawable/gra_orange"
@@ -131,7 +122,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView35"
+        android:id="@+id/ic_main_logo_registration"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_alignParentTop="true"

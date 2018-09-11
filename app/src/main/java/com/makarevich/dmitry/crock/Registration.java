@@ -20,8 +20,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Registration extends AppCompatActivity {
-    private ImageView img_Form, imageView35;
-    private EditText et_MailR, et_PassR;
+    private ImageView ic_main_logo_registration;
+    private EditText edit_mail, edit_password;
     private FirebaseAuth firebaseAuth;
     public static Context contextOfApplication;
 
@@ -31,15 +31,14 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         contextOfApplication = getApplicationContext();
         firebaseAuth = FirebaseAuth.getInstance();
-        et_MailR = findViewById(R.id.et_MailR);
-        et_PassR = findViewById(R.id.et_PassR);
-        img_Form = findViewById(R.id.img_Form);
-        imageView35 = findViewById(R.id.imageView35);
-        Button btn_LogIn = findViewById(R.id.btn_LogIn);
-        Button btn_Registration = findViewById(R.id.btn_Registration);
-        Button btn_Registration3 = findViewById(R.id.btn_Registration3);
+        edit_mail = findViewById(R.id.edit_mail);
+        edit_password = findViewById(R.id.edit_password);
+        ic_main_logo_registration = findViewById(R.id.ic_main_logo_registration);
+        Button btn_login = findViewById(R.id.btn_login);
+        Button btn_registration = findViewById(R.id.btn_registration);
+        Button btn_skip_reg = findViewById(R.id.btn_skip_reg);
         PushImage();
-        btn_Registration.setOnClickListener(new View.OnClickListener() {
+        btn_registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Firebase_registration();
@@ -55,7 +54,7 @@ public class Registration extends AppCompatActivity {
                 }
             }
         });
-        btn_Registration3.setOnClickListener(new View.OnClickListener() {
+        btn_skip_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Registration.this);
@@ -89,14 +88,7 @@ public class Registration extends AppCompatActivity {
                 alert.show();
             }
         });
-        img_Form.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent next = new Intent(Registration.this, MainMenu.class);
-                startActivity(next);
-            }
-        });
-        btn_LogIn.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent login = new Intent(Registration.this, LogIn.class);
@@ -119,8 +111,8 @@ public class Registration extends AppCompatActivity {
 
     public void Firebase_registration() {
         try {
-            String email = et_MailR.getText().toString();
-            String password = et_PassR.getText().toString();
+            String email = edit_mail.getText().toString();
+            String password = edit_password.getText().toString();
             firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -140,15 +132,10 @@ public class Registration extends AppCompatActivity {
 
     public void PushImage() {
         int first = R.drawable.crocko_green;
-        int second = R.drawable.registratuion;
-        Glide
-                .with(this)
-                .load(second)
-                .into(img_Form);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView35);
+                .into(ic_main_logo_registration);
 
     }
 
