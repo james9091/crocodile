@@ -52,9 +52,9 @@ import java.util.List;
 import java.util.Random;
 
 public class One_Normal extends AppCompatActivity {
-    private ImageView imageView7, imageView8, imageView9, imageView20;
-    private Button button3, button9;
-    private TextView textView72, textView21, textView22, textView18, textView8, textView11, textView82, textView83;
+    private ImageView ic_player_one, ic_player_two, ic_ok_left, ic_ok_right;
+    private Button btn_back_normal, btn_start_game;
+    private TextView txt_player, txt_score_one, txt_score_two, txt_main_word, txt_one_vs_one_norm, txt_simple_mode, txt_count, txt_back_counter;
     private RelativeLayout reel_back_norm;
     @SuppressLint("StaticFieldLeak")
     public static Context context_one_normal;
@@ -64,45 +64,45 @@ public class One_Normal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one__normal);
         context_one_normal = getApplicationContext();
-        imageView7 = findViewById(R.id.imageView7);
-        imageView8 = findViewById(R.id.imageView8);
-        imageView9 = findViewById(R.id.imageView9);
-        imageView20 = findViewById(R.id.imageView20);
-        textView72 = findViewById(R.id.textView72);
-        textView21 = findViewById(R.id.textView21);
-        textView22 = findViewById(R.id.textView22);
-        textView18 = findViewById(R.id.textView18);
-        textView82 = findViewById(R.id.textView82);
-        textView8 = findViewById(R.id.textView8);
+        ic_player_one = findViewById(R.id.ic_player_one);
+        ic_player_two = findViewById(R.id.ic_player_two);
+        ic_ok_left = findViewById(R.id.ic_ok_left);
+        ic_ok_right = findViewById(R.id.ic_ok_right);
+        txt_player = findViewById(R.id.txt_player);
+        txt_score_one = findViewById(R.id.txt_score_one);
+        txt_score_two = findViewById(R.id.txt_score_two);
+        txt_main_word = findViewById(R.id.txt_main_word);
+        txt_count = findViewById(R.id.txt_count);
+        txt_one_vs_one_norm = findViewById(R.id.txt_one_vs_one_norm);
         reel_back_norm = findViewById(R.id.reel_back_norm);
-        textView83 = findViewById(R.id.textView83);
-        textView11 = findViewById(R.id.textView11);
-        button3 = findViewById(R.id.button3);
-        button9 = findViewById(R.id.button9);
+        txt_back_counter = findViewById(R.id.txt_back_counter);
+        txt_simple_mode = findViewById(R.id.txt_simple_mode);
+        btn_back_normal = findViewById(R.id.btn_back_normal);
+        btn_start_game = findViewById(R.id.btn_start_game);
         PushImage();
         Font();
-        button3.setOnClickListener(new View.OnClickListener() {
+        btn_back_normal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent back = new Intent(One_Normal.this, Play_Mode.class);
                 startActivity(back);
             }
         });
-        imageView7.setOnClickListener(new View.OnClickListener() {
+        ic_player_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PlayerOne();
                 WordsOneNormal();
             }
         });
-        imageView8.setOnClickListener(new View.OnClickListener() {
+        ic_player_two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PlayerTwo();
                 WordsOneNormal();
             }
         });
-        button9.setOnClickListener(new View.OnClickListener() {
+        btn_start_game.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BackCount();
@@ -111,18 +111,18 @@ public class One_Normal extends AppCompatActivity {
     }
 
     private void BackCount() {
-        button9.setVisibility(View.INVISIBLE);
-        textView82.setVisibility(View.VISIBLE);
-        textView83.setVisibility(View.VISIBLE);
+        btn_start_game.setVisibility(View.INVISIBLE);
+        txt_count.setVisibility(View.VISIBLE);
+        txt_back_counter.setVisibility(View.VISIBLE);
         final CountDownTimer yourCountDownTimer = new CountDownTimer(6000, 1000) {
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
-                textView82.setText(String.valueOf(millisUntilFinished / 1000));
+                txt_count.setText(String.valueOf(millisUntilFinished / 1000));
             }
 
             public void onFinish() {
-                textView82.setVisibility(View.INVISIBLE);
-                textView83.setVisibility(View.INVISIBLE);
+                txt_count.setVisibility(View.INVISIBLE);
+                txt_back_counter.setVisibility(View.INVISIBLE);
                 reel_back_norm.setVisibility(View.INVISIBLE);
                 WordsOneNormal();
                 PlayerOne();
@@ -131,11 +131,11 @@ public class One_Normal extends AppCompatActivity {
     }
 
     public void Font() {
-        textView8.setTypeface(Typeface.createFromAsset(
+        txt_one_vs_one_norm.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView11.setTypeface(Typeface.createFromAsset(
+        txt_simple_mode.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button3.setTypeface(Typeface.createFromAsset(
+        btn_back_normal.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -156,32 +156,32 @@ public class One_Normal extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView9);
+                .into(ic_ok_left);
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView20);
+                .into(ic_ok_right);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView7);
+                .into(ic_player_one);
         Glide
                 .with(this)
                 .load(four)
-                .into(imageView8);
+                .into(ic_player_two);
     }
 
     private void PlayerOne() {
-        textView72.setText(getString(R.string.player_one_g));
-        imageView9.setVisibility(View.VISIBLE);
-        imageView9.setOnClickListener(new View.OnClickListener() {
+        txt_player.setText(getString(R.string.player_one_g));
+        ic_ok_left.setVisibility(View.VISIBLE);
+        ic_ok_left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imageView9.setVisibility(View.INVISIBLE);
-                textView18.setText(" ");
-                int score = Integer.parseInt(textView21.getText().toString()) + 1;
-                textView21.setText(String.valueOf(score));
-                textView72.setText(" ");
+                ic_ok_left.setVisibility(View.INVISIBLE);
+                txt_main_word.setText(" ");
+                int score = Integer.parseInt(txt_score_one.getText().toString()) + 1;
+                txt_score_one.setText(String.valueOf(score));
+                txt_player.setText(" ");
                 WordsOneNormal();
                 PlayerTwo();
             }
@@ -189,16 +189,16 @@ public class One_Normal extends AppCompatActivity {
     }
 
     private void PlayerTwo() {
-        textView72.setText(getString(R.string.player_two_g));
-        imageView20.setVisibility(View.VISIBLE);
-        imageView20.setOnClickListener(new View.OnClickListener() {
+        txt_player.setText(getString(R.string.player_two_g));
+        ic_ok_right.setVisibility(View.VISIBLE);
+        ic_ok_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imageView20.setVisibility(View.INVISIBLE);
-                int score = Integer.parseInt(textView22.getText().toString()) + 1;
-                textView22.setText(String.valueOf(score));
-                textView72.setText(" ");
-                textView18.setText(" ");
+                ic_ok_right.setVisibility(View.INVISIBLE);
+                int score = Integer.parseInt(txt_score_two.getText().toString()) + 1;
+                txt_score_two.setText(String.valueOf(score));
+                txt_player.setText(" ");
+                txt_main_word.setText(" ");
                 WordsOneNormal();
                 PlayerOne();
             }
@@ -223,7 +223,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -237,7 +237,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -250,7 +250,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -263,7 +263,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -276,7 +276,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -289,7 +289,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -302,7 +302,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -315,7 +315,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("RU_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
 
         }
@@ -332,7 +332,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -346,7 +346,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -359,7 +359,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -372,7 +372,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -385,7 +385,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -398,7 +398,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -411,7 +411,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -424,7 +424,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("EN_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
 
         }
@@ -440,7 +440,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -454,7 +454,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -467,7 +467,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -480,7 +480,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -493,7 +493,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -506,7 +506,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -519,7 +519,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -532,7 +532,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("DE_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
 
         }
@@ -548,7 +548,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_EASY_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
 
             }
             if (play_game.contains("medium")) {
@@ -562,7 +562,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_MEDIUM_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("hard")) {
                 MyAppDataBase myAppDataBase;
@@ -575,7 +575,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_HARD_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("mixsy")) {
                 MyAppDataBase myAppDataBase;
@@ -588,7 +588,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = 700;
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("animal")) {
                 MyAppDataBase myAppDataBase;
@@ -601,7 +601,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_ANIMAL_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("planet")) {
                 MyAppDataBase myAppDataBase;
@@ -614,7 +614,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_PLANET_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("profession")) {
                 MyAppDataBase myAppDataBase;
@@ -627,7 +627,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_PROFESSIONS_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
             if (play_game.contains("transport")) {
                 MyAppDataBase myAppDataBase;
@@ -640,7 +640,7 @@ public class One_Normal extends AppCompatActivity {
                 int max_value = Integer.parseInt(sharedPreferences.getString("ES_TRANSPORT_CURSOR", ""));
                 int number = 1 + rnd.nextInt(max_value - 1 + 1);
                 String string_ok = linkedList.get(number);
-                textView18.setText(string_ok);
+                txt_main_word.setText(string_ok);
             }
         }
     }
