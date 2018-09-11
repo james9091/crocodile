@@ -60,10 +60,10 @@ import java.io.InputStreamReader;
 import java.util.Locale;
 
 public class SpalshScreen extends AppCompatActivity {
-    private ImageView img_Crock;
+    private ImageView ic_crock;
     private FirebaseAuth firebaseAuth;
     private ProgressBar pro;
-    private TextView textView3, textView5;
+    private TextView txt_crocodile_splash, txt_loading;
     @SuppressLint("StaticFieldLeak")
     public static Context contex_splash_screen;
     DataBase dataBase;
@@ -74,9 +74,9 @@ public class SpalshScreen extends AppCompatActivity {
         setContentView(R.layout.activity_spalsh__screen);
         contex_splash_screen = getApplicationContext();
         dataBase = new DataBase(this);
-        textView3 = findViewById(R.id.textView3);
-        textView5 = findViewById(R.id.textView5);
-        img_Crock = findViewById(R.id.img_Crock);
+        txt_crocodile_splash = findViewById(R.id.txt_crocodile_splash);
+        txt_loading = findViewById(R.id.txt_loading);
+        ic_crock = findViewById(R.id.ic_crock);
         pro = findViewById(R.id.progressBar2);
         firebaseAuth = FirebaseAuth.getInstance();
         ShimmerFrameLayout cont =
@@ -109,14 +109,14 @@ public class SpalshScreen extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(img_Crock);
+                .into(ic_crock);
 
     }
 
     public void Font() {
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_crocodile_splash.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/cro.otf"));
-        textView5.setTypeface(Typeface.createFromAsset(
+        txt_loading.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/cro.otf"));
 
     }
@@ -195,13 +195,13 @@ public class SpalshScreen extends AppCompatActivity {
         if (s.contains("yes")) {
 
         } else {
-            textView5.setText(getString(R.string.dictionary_downloads));
+            txt_loading.setText(getString(R.string.dictionary_downloads));
             Animation anim = new AlphaAnimation(0.0f, 1.0f);
             anim.setDuration(500);
             anim.setStartOffset(20);
             anim.setRepeatMode(Animation.REVERSE);
             anim.setRepeatCount(Animation.INFINITE);
-            textView5.startAnimation(anim);
+            txt_loading.startAnimation(anim);
         }
 
     }
