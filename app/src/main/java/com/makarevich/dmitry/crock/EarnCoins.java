@@ -19,8 +19,8 @@ import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListener {
-    private ImageView imageView26, imageView33, imageView37;
-    private TextView textView59, textView60, textView61, textView58, textView48, textView57, textView62;
+    private ImageView ic_video_logo, ic_play, ic_coins;
+    private TextView txt_start, txt_view, txt_available, txt_earn_coins, txt_see, txt_video, txt_coins;
     @SuppressLint("StaticFieldLeak")
     public static Context context_earn_coins;
     private static final String AD_UNIT_ID = "ca-app-pub-1771512599501543/8702164834";
@@ -33,21 +33,21 @@ public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_earn__coins);
         context_earn_coins = getApplicationContext();
-        textView62 = findViewById(R.id.textView62);
-        textView59 = findViewById(R.id.textView59);
-        textView60 = findViewById(R.id.textView60);
-        textView61 = findViewById(R.id.textView61);
-        textView58 = findViewById(R.id.textView58);
-        textView48 = findViewById(R.id.textView48);
-        textView57 = findViewById(R.id.textView57);
-        imageView26 = findViewById(R.id.imageView26);
-        imageView33 = findViewById(R.id.imageView33);
-        imageView37 = findViewById(R.id.imageView37);
+        txt_coins = findViewById(R.id.txt_coins);
+        txt_start = findViewById(R.id.txt_start);
+        txt_view = findViewById(R.id.txt_view);
+        txt_available = findViewById(R.id.txt_available);
+        txt_earn_coins = findViewById(R.id.txt_earn_coins);
+        txt_see = findViewById(R.id.txt_see);
+        txt_video = findViewById(R.id.txt_video);
+        ic_video_logo = findViewById(R.id.ic_video_logo);
+        ic_play = findViewById(R.id.ic_play);
+        ic_coins = findViewById(R.id.ic_coins);
         PushPic();
         rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         rewardedVideoAd.setRewardedVideoAdListener(this);
         MobileAds.initialize(this, APP_ID);
-        imageView33.setOnClickListener(new View.OnClickListener() {
+        ic_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startVideoAd();
@@ -56,7 +56,7 @@ public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListe
         loadRewardedVideoAd();
         Font();
         String test = SharedPref.getCoin();
-        textView62.setText(test + " " + getString(R.string.coinss));
+        txt_coins.setText(test + " " + getString(R.string.coinss));
     }
 
     public void startVideoAd() {
@@ -91,15 +91,15 @@ public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListe
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView26);
+                .into(ic_video_logo);
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView33);
+                .into(ic_play);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView37);
+                .into(ic_coins);
 
     }
 
@@ -131,7 +131,7 @@ public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListe
         SharedPref.Coins();
         String test = SharedPref.getCoin();
         Toast.makeText(context_earn_coins, getString(R.string.you_earned_coins), Toast.LENGTH_SHORT).show();
-        textView62.setText(test + " " + getString(R.string.coinss));
+        txt_coins.setText(test + " " + getString(R.string.coinss));
     }
 
     @Override
@@ -145,19 +145,19 @@ public class EarnCoins extends AppCompatActivity implements RewardedVideoAdListe
     }
 
     public void Font() {
-        textView59.setTypeface(Typeface.createFromAsset(
+        txt_start.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView60.setTypeface(Typeface.createFromAsset(
+        txt_view.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView61.setTypeface(Typeface.createFromAsset(
+        txt_available.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView62.setTypeface(Typeface.createFromAsset(
+        txt_coins.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView58.setTypeface(Typeface.createFromAsset(
+        txt_earn_coins.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView57.setTypeface(Typeface.createFromAsset(
+        txt_video.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView48.setTypeface(Typeface.createFromAsset(
+        txt_see.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
 
     }

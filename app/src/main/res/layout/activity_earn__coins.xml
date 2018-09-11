@@ -7,21 +7,21 @@
     tools:context=".EarnCoins">
 
     <ImageView
-        android:id="@+id/imageView37"
+        android:id="@+id/ic_coins"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/textView61"
-        android:layout_alignStart="@+id/textView59"
-        android:layout_alignLeft="@+id/textView59"
-        android:contentDescription="@string/todo"/>
+        android:layout_above="@+id/txt_available"
+        android:layout_alignStart="@+id/txt_start"
+        android:contentDescription="@string/todo"
+        android:layout_alignLeft="@+id/txt_start" />
 
     <TextView
-        android:id="@+id/textView59"
+        android:id="@+id/txt_start"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView33"
-        android:layout_alignLeft="@+id/textView60"
-        android:layout_alignStart="@+id/textView60"
+        android:layout_above="@+id/ic_play"
+        android:layout_alignLeft="@+id/txt_view"
+        android:layout_alignStart="@+id/txt_view"
         android:text="@string/move"
         android:textAlignment="center"
         android:textColor="#FFF"
@@ -29,11 +29,11 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView60"
+        android:id="@+id/txt_view"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/imageView33"
+        android:layout_below="@+id/ic_play"
         android:layout_marginEnd="60dp"
         android:text="@string/watch"
         android:textAlignment="center"
@@ -44,7 +44,7 @@
         android:layout_marginRight="60dp" />
 
     <TextView
-        android:id="@+id/textView61"
+        android:id="@+id/txt_available"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -60,12 +60,12 @@
         android:layout_marginRight="19dp" />
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/txt_coins"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView61"
-        android:layout_alignStart="@+id/textView61"
-        android:layout_below="@+id/textView61"
+        android:layout_alignLeft="@+id/txt_available"
+        android:layout_alignStart="@+id/txt_available"
+        android:layout_below="@+id/txt_available"
         android:layout_marginTop="-86dp"
         android:paddingTop="5dp"
         android:text="@string/coinss"
@@ -75,7 +75,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView33"
+        android:id="@+id/ic_play"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
@@ -86,7 +86,7 @@
         android:contentDescription="@string/todo" />
 
     <TextView
-        android:id="@+id/textView58"
+        android:id="@+id/txt_earn_coins"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -110,10 +110,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView48"
+            android:id="@+id/txt_see"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageView26"
+            android:layout_above="@+id/ic_video_logo"
             android:layout_centerHorizontal="true"
             android:paddingBottom="10dp"
             android:text="@string/wat"
@@ -122,10 +122,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView57"
+            android:id="@+id/txt_video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView26"
+            android:layout_below="@+id/ic_video_logo"
             android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
             android:text="@string/video"
@@ -134,7 +134,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/ic_video_logo"
             android:layout_width="110dp"
             android:layout_height="110dp"
             android:layout_centerInParent="true"
