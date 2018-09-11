@@ -12,19 +12,20 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class RulesOneToOne extends AppCompatActivity {
-    private Button button3;
-    private TextView textView8,textView11,textView12;
-    private ImageView imageView;
+    private Button btn_skip_rules_onetoone;
+    private TextView txt_rules_one, txt_one_vs_one, txt_rules_one_main;
+    private ImageView ic_rules;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules__one_to_one);
-        button3 = findViewById(R.id.button3);
-        textView8=findViewById(R.id.textView8);
-        textView11=findViewById(R.id.textView11);
-        textView12=findViewById(R.id.textView12);
-        imageView = findViewById(R.id.imageView);
-        button3.setOnClickListener(new View.OnClickListener() {
+        btn_skip_rules_onetoone = findViewById(R.id.btn_skip_rules_onetoone);
+        txt_rules_one = findViewById(R.id.txt_rules_one);
+        txt_one_vs_one = findViewById(R.id.txt_one_vs_one);
+        txt_rules_one_main = findViewById(R.id.txt_rules_one_main);
+        ic_rules = findViewById(R.id.ic_rules);
+        btn_skip_rules_onetoone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent dictionary = new Intent(RulesOneToOne.this, DictionaryAll.class);
@@ -46,16 +47,17 @@ public class RulesOneToOne extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView);
+                .into(ic_rules);
     }
+
     public void Font() {
-        textView8.setTypeface(Typeface.createFromAsset(
+        txt_rules_one.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView11.setTypeface(Typeface.createFromAsset(
+        txt_one_vs_one.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView12.setTypeface(Typeface.createFromAsset(
+        txt_rules_one_main.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        button3.setTypeface(Typeface.createFromAsset(
+        btn_skip_rules_onetoone.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 }
