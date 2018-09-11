@@ -22,9 +22,9 @@ import com.bumptech.glide.Glide;
 
 public class LastStorePage extends AppCompatActivity {
 
-    private ImageView imageView27, imageView30, imageView40, imageView28, imageView29, img_ManTwo, img_ManFi, img_ManTen;
-    private TextView textView45, textView44, textView2, textView3, textView90, textView68, textView63, textView66, textView67;
-    private TextView textView47, textView52, textView50, textView78;
+    private ImageView ic_logo, ic_wallet, ic_coins, ic_shop_cart, ic_sale, ic_easy, ic_hard, ic_medium;
+    private TextView txt_crocodile, txt_buy_new_words, txt_easy, txt_hard, txt_medium, txt_crocko_shop, txt_buy_easy, txt_buy_medium, txt_buy_hard;
+    private TextView txt_easy_you, txt_hard_you, txt_medium_you, txt_coins;
     @SuppressLint("StaticFieldLeak")
     public static Context context_last_store_page;
 
@@ -33,36 +33,36 @@ public class LastStorePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_last_store_page);
         context_last_store_page = getApplicationContext();
-        textView47 = findViewById(R.id.textView47);
-        textView52 = findViewById(R.id.textView52);
-        textView50 = findViewById(R.id.textView50);
-        textView45 = findViewById(R.id.textView45);
-        textView44 = findViewById(R.id.textView44);
-        textView78 = findViewById(R.id.textView78);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView90 = findViewById(R.id.textView90);
-        textView63 = findViewById(R.id.textView63);
-        textView66 = findViewById(R.id.textView66);
-        textView67 = findViewById(R.id.textView67);
-        textView68 = findViewById(R.id.textView68);
-        imageView27 = findViewById(R.id.imageView27);
-        imageView30 = findViewById(R.id.imageView30);
-        imageView28 = findViewById(R.id.imageView28);
-        imageView29 = findViewById(R.id.imageView29);
-        imageView40 = findViewById(R.id.imageView40);
-        img_ManTwo = findViewById(R.id.img_ManTwo);
-        img_ManFi = findViewById(R.id.img_ManFi);
-        img_ManTen = findViewById(R.id.img_ManTen);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout three = findViewById(R.id.three);
+        txt_easy_you = findViewById(R.id.txt_easy_you);
+        txt_hard_you = findViewById(R.id.txt_hard_you);
+        txt_medium_you = findViewById(R.id.txt_medium_you);
+        txt_crocodile = findViewById(R.id.txt_crocodile);
+        txt_buy_new_words = findViewById(R.id.txt_buy_new_words);
+        txt_coins = findViewById(R.id.txt_coins);
+        txt_easy = findViewById(R.id.txt_easy);
+        txt_hard = findViewById(R.id.txt_hard);
+        txt_medium = findViewById(R.id.txt_medium);
+        txt_buy_easy = findViewById(R.id.txt_buy_easy);
+        txt_buy_medium = findViewById(R.id.txt_buy_medium);
+        txt_buy_hard = findViewById(R.id.txt_buy_hard);
+        txt_crocko_shop = findViewById(R.id.txt_crocko_shop);
+        ic_logo = findViewById(R.id.ic_logo);
+        ic_wallet = findViewById(R.id.ic_wallet);
+        ic_shop_cart = findViewById(R.id.ic_shop_cart);
+        ic_sale = findViewById(R.id.ic_sale);
+        ic_coins = findViewById(R.id.ic_coins);
+        ic_easy = findViewById(R.id.ic_easy);
+        ic_hard = findViewById(R.id.ic_hard);
+        ic_medium = findViewById(R.id.ic_medium);
+        RelativeLayout one = findViewById(R.id.rel_one);
+        RelativeLayout two = findViewById(R.id.rel_two);
+        RelativeLayout three = findViewById(R.id.rel_three);
         Animation anim = new AlphaAnimation(0.0f, 1.0f);
         anim.setDuration(500);
         anim.setStartOffset(20);
         anim.setRepeatMode(Animation.REVERSE);
         anim.setRepeatCount(Animation.INFINITE);
-        textView68.startAnimation(anim);
+        txt_crocko_shop.startAnimation(anim);
         Font();
         PushImage();
         getC();
@@ -157,23 +157,23 @@ public class LastStorePage extends AppCompatActivity {
     }
 
     public void Font() {
-        textView45.setTypeface(Typeface.createFromAsset(
+        txt_crocodile.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_easy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_hard.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView44.setTypeface(Typeface.createFromAsset(
+        txt_buy_new_words.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView90.setTypeface(Typeface.createFromAsset(
+        txt_medium.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView68.setTypeface(Typeface.createFromAsset(
+        txt_crocko_shop.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView63.setTypeface(Typeface.createFromAsset(
+        txt_buy_easy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView66.setTypeface(Typeface.createFromAsset(
+        txt_buy_medium.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView67.setTypeface(Typeface.createFromAsset(
+        txt_buy_hard.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -190,35 +190,35 @@ public class LastStorePage extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView27);
+                .into(ic_logo);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView30);
+                .into(ic_wallet);
         Glide
                 .with(this)
                 .load(four)
-                .into(imageView28);
+                .into(ic_shop_cart);
         Glide
                 .with(this)
                 .load(five)
-                .into(imageView29);
+                .into(ic_sale);
         Glide
                 .with(this)
                 .load(seven)
-                .into(img_ManTwo);
+                .into(ic_easy);
         Glide
                 .with(this)
                 .load(eight)
-                .into(img_ManFi);
+                .into(ic_hard);
         Glide
                 .with(this)
                 .load(nine)
-                .into(img_ManTen);
+                .into(ic_medium);
         Glide
                 .with(this)
                 .load(ten)
-                .into(imageView40);
+                .into(ic_coins);
     }
 
     @SuppressLint("SetTextI18n")
@@ -232,34 +232,34 @@ public class LastStorePage extends AppCompatActivity {
             String easy_ru = sharedPreferences.getString("RU_EASY_CURSOR", "");
             String medium_ru = sharedPreferences.getString("RU_MEDIUM_CURSOR", "");
             String hard_ru = sharedPreferences.getString("RU_HARD_CURSOR", "");
-            textView47.setText(getString(R.string.good) + "\n" + easy_ru + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + medium_ru + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + hard_ru + "\n" + getString(R.string.word));
+            txt_easy_you.setText(getString(R.string.good) + "\n" + easy_ru + "\n" + getString(R.string.word));
+            txt_hard_you.setText(getString(R.string.good) + "\n" + medium_ru + "\n" + getString(R.string.word));
+            txt_medium_you.setText(getString(R.string.good) + "\n" + hard_ru + "\n" + getString(R.string.word));
 
         }
         if (def_locale.contains("en")) {
             String easy_en = sharedPreferences.getString("EN_EASY_CURSOR", "");
             String medium_en = sharedPreferences.getString("EN_MEDIUM_CURSOR", "");
             String hard_en = sharedPreferences.getString("EN_HARD_CURSOR", "");
-            textView47.setText(getString(R.string.good) + "\n" + easy_en + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + medium_en + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + hard_en + "\n" + getString(R.string.word));
+            txt_easy_you.setText(getString(R.string.good) + "\n" + easy_en + "\n" + getString(R.string.word));
+            txt_hard_you.setText(getString(R.string.good) + "\n" + medium_en + "\n" + getString(R.string.word));
+            txt_medium_you.setText(getString(R.string.good) + "\n" + hard_en + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("de")) {
             String easy_de = sharedPreferences.getString("DE_EASY_CURSOR", "");
             String medium_de = sharedPreferences.getString("DE_MEDIUM_CURSOR", "");
             String hard_de = sharedPreferences.getString("DE_HARD_CURSOR", "");
-            textView47.setText(getString(R.string.good) + "\n" + easy_de + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + medium_de + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + hard_de + "\n" + getString(R.string.word));
+            txt_easy_you.setText(getString(R.string.good) + "\n" + easy_de + "\n" + getString(R.string.word));
+            txt_hard_you.setText(getString(R.string.good) + "\n" + medium_de + "\n" + getString(R.string.word));
+            txt_medium_you.setText(getString(R.string.good) + "\n" + hard_de + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("es")) {
             String easy_es = sharedPreferences.getString("ES_EASY_CURSOR", "");
             String medium_es = sharedPreferences.getString("ES_MEDIUM_CURSOR", "");
             String hard_es = sharedPreferences.getString("ES_HARD_CURSOR", "");
-            textView47.setText(getString(R.string.good) + "\n" + easy_es + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + medium_es + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + hard_es + "\n" + getString(R.string.word));
+            txt_easy_you.setText(getString(R.string.good) + "\n" + easy_es + "\n" + getString(R.string.word));
+            txt_hard_you.setText(getString(R.string.good) + "\n" + medium_es + "\n" + getString(R.string.word));
+            txt_medium_you.setText(getString(R.string.good) + "\n" + hard_es + "\n" + getString(R.string.word));
         }
     }
 
@@ -268,7 +268,7 @@ public class LastStorePage extends AppCompatActivity {
         Context applicationContext = LastStorePage.getContextLastStorePage();
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         String coins = sharedPreferences.getString("COIN", "");
-        textView78.setText(coins + " " + getString(R.string.coinss));
+        txt_coins.setText(coins + " " + getString(R.string.coinss));
     }
 
     public void BuyStartEasy() {
