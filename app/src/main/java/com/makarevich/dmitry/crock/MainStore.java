@@ -13,31 +13,31 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 public class MainStore extends AppCompatActivity {
-    private ImageView imageView3, imageView4, imageView5, img_Play, img_Book, img_Settings, img_Buy;
-    private TextView text_User, text_User2, text_User3, textView5, textView555, textView2, textView3;
+    private ImageView ic_croc_one, ic_croc_two, ic_croc_three, ic_play, ic_book, ic_settings, ic_buy;
+    private TextView txt_crocodile, txt_noisy, txt_party, txt_buy_coins, txt_buy_game, txt_buy_dictionary, txt_earn_coins;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_store);
-        text_User = findViewById(R.id.text_User);
-        text_User2 = findViewById(R.id.text_User2);
-        text_User3 = findViewById(R.id.text_User3);
-        textView5 = findViewById(R.id.textView5);
-        textView555 = findViewById(R.id.textView555);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        imageView3 = findViewById(R.id.imageView3);
-        imageView4 = findViewById(R.id.imageView4);
-        imageView5 = findViewById(R.id.imageView5);
-        img_Play = findViewById(R.id.img_Play);
-        img_Book = findViewById(R.id.img_Book);
-        img_Settings = findViewById(R.id.img_Settings);
-        img_Buy = findViewById(R.id.img_Buy);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout fit = findViewById(R.id.fit);
-        RelativeLayout fitsn = findViewById(R.id.fitsn);
+        txt_crocodile = findViewById(R.id.txt_crocodile);
+        txt_noisy = findViewById(R.id.txt_noisy);
+        txt_party = findViewById(R.id.txt_party);
+        txt_buy_coins = findViewById(R.id.txt_buy_coins);
+        txt_buy_game = findViewById(R.id.txt_buy_game);
+        txt_buy_dictionary = findViewById(R.id.txt_buy_dictionary);
+        txt_earn_coins = findViewById(R.id.txt_earn_coins);
+        ic_croc_one = findViewById(R.id.ic_croc_one);
+        ic_croc_two = findViewById(R.id.ic_croc_two);
+        ic_croc_three = findViewById(R.id.ic_croc_three);
+        ic_play = findViewById(R.id.ic_play);
+        ic_book = findViewById(R.id.ic_book);
+        ic_settings = findViewById(R.id.ic_settings);
+        ic_buy = findViewById(R.id.ic_buy);
+        RelativeLayout one = findViewById(R.id.rel_one);
+        RelativeLayout two = findViewById(R.id.rel_two);
+        RelativeLayout fit = findViewById(R.id.rel_three);
+        RelativeLayout fitsn = findViewById(R.id.rel_four);
         PushPic();
         Font();
         one.setOnClickListener(new View.OnClickListener() {
@@ -86,48 +86,48 @@ public class MainStore extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView3);
+                .into(ic_croc_one);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView4);
+                .into(ic_croc_two);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView5);
+                .into(ic_croc_three);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_Play);
+                .into(ic_play);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_Book);
+                .into(ic_book);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_Settings);
+                .into(ic_settings);
         Glide
                 .with(this)
                 .load(five)
-                .into(img_Buy);
+                .into(ic_buy);
 
     }
 
     public void Font() {
-        text_User.setTypeface(Typeface.createFromAsset(
+        txt_crocodile.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User2.setTypeface(Typeface.createFromAsset(
+        txt_noisy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User3.setTypeface(Typeface.createFromAsset(
+        txt_party.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView5.setTypeface(Typeface.createFromAsset(
+        txt_buy_coins.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView555.setTypeface(Typeface.createFromAsset(
+        txt_buy_game.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_buy_dictionary.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_earn_coins.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
