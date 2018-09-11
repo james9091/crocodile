@@ -14,8 +14,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class Play_Mode extends AppCompatActivity {
-    private ImageView imageView3, imageView4, imageView5, img_ManOne, img_ManTwo, img_WomOne, img_manT, img_ManF, img_ManFi, img_WomTw, img_ManSix, img_ManSev, img_ManEigh;
-    private TextView text_User, text_User2, text_User3, textView2, textView3, textView4;
+    private ImageView ic_crock_one, ic_crock_two, ic_crock_three, ic_man_one, ic_man_two, ic_woman_one, ic_man_ten, ic_man_four, ic_man_five, ic_woman_two, ic_man_six, ic_man_seven, ic_man_eight;
+    private TextView txt_main_name, txt_noisy, txt_party, txt_oneone, txt_comandcom, txt_comandcomand;
     @SuppressLint("StaticFieldLeak")
     public static Context context_play_mode;
 
@@ -24,28 +24,28 @@ public class Play_Mode extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play__mode);
         context_play_mode = getApplicationContext();
-        text_User = findViewById(R.id.text_User);
-        text_User2 = findViewById(R.id.text_User2);
-        text_User3 = findViewById(R.id.text_User3);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView4 = findViewById(R.id.textView4);
-        imageView3 = findViewById(R.id.imageView3);
-        imageView4 = findViewById(R.id.imageView4);
-        imageView5 = findViewById(R.id.imageView5);
-        img_ManOne = findViewById(R.id.img_ManOne);
-        img_ManTwo = findViewById(R.id.img_ManTwo);
-        img_WomOne = findViewById(R.id.img_WomOne);
-        img_manT = findViewById(R.id.img_manT);
-        img_ManF = findViewById(R.id.img_ManF);
-        img_ManFi = findViewById(R.id.img_ManFi);
-        img_WomTw = findViewById(R.id.img_WomTw);
-        img_ManSix = findViewById(R.id.img_ManSix);
-        img_ManSev = findViewById(R.id.img_ManSev);
-        img_ManEigh = findViewById(R.id.img_ManEigh);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout three = findViewById(R.id.five);
+        txt_main_name = findViewById(R.id.txt_main_name);
+        txt_noisy = findViewById(R.id.txt_noisy);
+        txt_party = findViewById(R.id.txt_party);
+        txt_oneone = findViewById(R.id.txt_oneone);
+        txt_comandcom = findViewById(R.id.txt_comandcom);
+        txt_comandcomand = findViewById(R.id.txt_comandcomand);
+        ic_crock_one = findViewById(R.id.ic_crock_one);
+        ic_crock_two = findViewById(R.id.ic_crock_two);
+        ic_crock_three = findViewById(R.id.ic_crock_three);
+        ic_man_one = findViewById(R.id.ic_man_one);
+        ic_man_two = findViewById(R.id.ic_man_two);
+        ic_woman_one = findViewById(R.id.ic_woman_one);
+        ic_man_ten = findViewById(R.id.ic_man_ten);
+        ic_man_four = findViewById(R.id.ic_man_four);
+        ic_man_five = findViewById(R.id.ic_man_five);
+        ic_woman_two = findViewById(R.id.ic_woman_two);
+        ic_man_six = findViewById(R.id.ic_man_six);
+        ic_man_seven = findViewById(R.id.ic_man_seven);
+        ic_man_eight = findViewById(R.id.ic_man_eight);
+        RelativeLayout one = findViewById(R.id.rel_one);
+        RelativeLayout two = findViewById(R.id.rel_two);
+        RelativeLayout three = findViewById(R.id.rel_five);
         PushImg();
         Font();
         one.setOnClickListener(new View.OnClickListener() {
@@ -94,69 +94,69 @@ public class Play_Mode extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView3);
+                .into(ic_crock_one);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView4);
+                .into(ic_crock_two);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView5);
+                .into(ic_crock_three);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_ManOne);
+                .into(ic_man_one);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_ManTwo);
+                .into(ic_man_two);
         Glide
                 .with(this)
                 .load(five)
-                .into(img_WomOne);
+                .into(ic_woman_one);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_manT);
+                .into(ic_man_ten);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_ManF);
+                .into(ic_man_four);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_ManFi);
+                .into(ic_man_five);
         Glide
                 .with(this)
                 .load(five)
-                .into(img_WomTw);
+                .into(ic_woman_two);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_ManSix);
+                .into(ic_man_six);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_ManSev);
+                .into(ic_man_seven);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_ManEigh);
+                .into(ic_man_eight);
     }
 
     public void Font() {
-        text_User.setTypeface(Typeface.createFromAsset(
+        txt_main_name.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_oneone.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_comandcom.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView4.setTypeface(Typeface.createFromAsset(
+        txt_comandcomand.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User2.setTypeface(Typeface.createFromAsset(
+        txt_noisy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User3.setTypeface(Typeface.createFromAsset(
+        txt_party.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 }
