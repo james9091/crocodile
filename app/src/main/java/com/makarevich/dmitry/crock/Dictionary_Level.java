@@ -14,30 +14,30 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class Dictionary_Level extends AppCompatActivity {
-    private ImageView imageView3, imageView4, imageView5, img_ManTwo, img_ManFi, img_ManEigh, img_ManSI;
-    private TextView text_User, text_User2, text_User3, textView2, textView3, textView4, textView47;
+    private ImageView ic_logo_one, ic_logo_two, ic_logo_three, ic_easy, ic_medium, ic_hard, ic_mix;
+    private TextView txt_dictionary, txt_choose, txt_complexity, txt_easy, txt_medium, txt_hard, txt_mix;
     @SuppressLint("StaticFieldLeak")
     public static Context context_dictionary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dictionary);
+        setContentView(R.layout.activity_dictionary_level);
         context_dictionary = getApplicationContext();
-        text_User = findViewById(R.id.text_User);
-        text_User2 = findViewById(R.id.text_User2);
-        text_User3 = findViewById(R.id.text_User3);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView4 = findViewById(R.id.textView4);
-        textView47 = findViewById(R.id.textView47);
-        imageView3 = findViewById(R.id.imageView3);
-        imageView4 = findViewById(R.id.imageView4);
-        imageView5 = findViewById(R.id.imageView5);
-        img_ManTwo = findViewById(R.id.img_ManTwo);
-        img_ManFi = findViewById(R.id.img_ManFi);
-        img_ManEigh = findViewById(R.id.img_ManEigh);
-        img_ManSI = findViewById(R.id.img_ManSI);
+        txt_dictionary = findViewById(R.id.txt_dictionary);
+        txt_choose = findViewById(R.id.txt_choose);
+        txt_complexity = findViewById(R.id.txt_complexity);
+        txt_easy = findViewById(R.id.txt_easy);
+        txt_medium = findViewById(R.id.txt_medium);
+        txt_hard = findViewById(R.id.txt_hard);
+        txt_mix = findViewById(R.id.txt_mix);
+        ic_logo_one = findViewById(R.id.ic_logo_one);
+        ic_logo_two = findViewById(R.id.ic_logo_two);
+        ic_logo_three = findViewById(R.id.ic_logo_three);
+        ic_easy = findViewById(R.id.ic_easy);
+        ic_medium = findViewById(R.id.ic_medium);
+        ic_hard = findViewById(R.id.ic_hard);
+        ic_mix = findViewById(R.id.ic_mix);
         RelativeLayout one = findViewById(R.id.one);
         RelativeLayout two = findViewById(R.id.two);
         RelativeLayout five = findViewById(R.id.five);
@@ -98,47 +98,47 @@ public class Dictionary_Level extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView3);
+                .into(ic_logo_one);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView4);
+                .into(ic_logo_two);
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView5);
+                .into(ic_logo_three);
         Glide
                 .with(this)
                 .load(second)
-                .into(img_ManTwo);
+                .into(ic_easy);
         Glide
                 .with(this)
                 .load(third)
-                .into(img_ManFi);
+                .into(ic_medium);
         Glide
                 .with(this)
                 .load(four)
-                .into(img_ManEigh);
+                .into(ic_hard);
         Glide
                 .with(this)
                 .load(five)
-                .into(img_ManSI);
+                .into(ic_mix);
     }
 
     public void Font() {
-        text_User.setTypeface(Typeface.createFromAsset(
+        txt_dictionary.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_easy.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_medium.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView4.setTypeface(Typeface.createFromAsset(
+        txt_hard.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User2.setTypeface(Typeface.createFromAsset(
+        txt_choose.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        text_User3.setTypeface(Typeface.createFromAsset(
+        txt_complexity.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView47.setTypeface(Typeface.createFromAsset(
+        txt_mix.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 }
