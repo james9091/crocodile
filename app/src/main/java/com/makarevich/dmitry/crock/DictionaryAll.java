@@ -16,45 +16,45 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class DictionaryAll extends AppCompatActivity {
-    private ImageView imageView27, imageView31, imageView30, imageView28, imageView29, imageView32, img_ManTwo, img_ManFi, img_ManTen, img_ManEi, img_ManEigh;
-    private TextView textView45, textView44, textView2, textView3, textView90, textView99, textView4;
+    private ImageView ic_main_logo, ic_small, ic_hard, ic_easy, ic_medium, ic_happy, ic_starts, ic_animal, ic_planet, ic_professions, ic_transport;
+    private TextView txt_crocodile, txt_select_dictionary, txt_starts, txt_animals, txt_planet, txt_professions, txt_transport;
     @SuppressLint("StaticFieldLeak")
     public static Context context_dictionary_all;
-    private TextView textView47, textView52, textView50, textView56, textView54;
+    private TextView txt_one_you, txt_two_you, txt_three_you, txt_five_you, txt_six_you;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dictionary__all);
         context_dictionary_all = getApplicationContext();
-        textView45 = findViewById(R.id.textView45);
-        textView44 = findViewById(R.id.textView44);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView90 = findViewById(R.id.textView90);
-        textView99 = findViewById(R.id.textView99);
-        textView4 = findViewById(R.id.textView4);
-        textView47 = findViewById(R.id.textView47);
-        textView52 = findViewById(R.id.textView52);
-        textView50 = findViewById(R.id.textView50);
-        textView54 = findViewById(R.id.textView54);
-        textView56 = findViewById(R.id.textView56);
-        imageView27 = findViewById(R.id.imageView27);
-        imageView31 = findViewById(R.id.imageView31);
-        imageView30 = findViewById(R.id.imageView30);
-        imageView28 = findViewById(R.id.imageView28);
-        imageView29 = findViewById(R.id.imageView29);
-        imageView32 = findViewById(R.id.imageView32);
-        img_ManTwo = findViewById(R.id.img_ManTwo);
-        img_ManFi = findViewById(R.id.img_ManFi);
-        img_ManTen = findViewById(R.id.img_ManTen);
-        img_ManEi = findViewById(R.id.img_ManEi);
-        img_ManEigh = findViewById(R.id.img_ManEigh);
-        RelativeLayout one = findViewById(R.id.one);
-        RelativeLayout two = findViewById(R.id.two);
-        RelativeLayout three = findViewById(R.id.three);
-        RelativeLayout six = findViewById(R.id.six);
-        RelativeLayout five = findViewById(R.id.five);
+        txt_crocodile = findViewById(R.id.txt_crocodile);
+        txt_select_dictionary = findViewById(R.id.txt_select_dictionary);
+        txt_starts = findViewById(R.id.txt_starts);
+        txt_animals = findViewById(R.id.txt_animals);
+        txt_planet = findViewById(R.id.txt_planet);
+        txt_professions = findViewById(R.id.txt_professions);
+        txt_transport = findViewById(R.id.txt_transport);
+        txt_one_you = findViewById(R.id.txt_one_you);
+        txt_two_you = findViewById(R.id.txt_two_you);
+        txt_three_you = findViewById(R.id.txt_three_you);
+        txt_six_you = findViewById(R.id.txt_six_you);
+        txt_five_you = findViewById(R.id.txt_five_you);
+        ic_main_logo = findViewById(R.id.ic_main_logo);
+        ic_small = findViewById(R.id.ic_small);
+        ic_hard = findViewById(R.id.ic_hard);
+        ic_easy = findViewById(R.id.ic_easy);
+        ic_medium = findViewById(R.id.ic_medium);
+        ic_happy = findViewById(R.id.ic_happy);
+        ic_starts = findViewById(R.id.ic_starts);
+        ic_animal = findViewById(R.id.ic_animal);
+        ic_planet = findViewById(R.id.ic_planet);
+        ic_professions = findViewById(R.id.ic_professions);
+        ic_transport = findViewById(R.id.ic_transport);
+        RelativeLayout one = findViewById(R.id.rel_one);
+        RelativeLayout two = findViewById(R.id.rel_two);
+        RelativeLayout three = findViewById(R.id.rel_three);
+        RelativeLayout six = findViewById(R.id.rel_six);
+        RelativeLayout five = findViewById(R.id.rel_five);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,19 +110,19 @@ public class DictionaryAll extends AppCompatActivity {
     }
 
     public void Font() {
-        textView45.setTypeface(Typeface.createFromAsset(
+        txt_crocodile.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView2.setTypeface(Typeface.createFromAsset(
+        txt_starts.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView3.setTypeface(Typeface.createFromAsset(
+        txt_animals.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView4.setTypeface(Typeface.createFromAsset(
+        txt_transport.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView44.setTypeface(Typeface.createFromAsset(
+        txt_select_dictionary.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView90.setTypeface(Typeface.createFromAsset(
+        txt_planet.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
-        textView99.setTypeface(Typeface.createFromAsset(
+        txt_professions.setTypeface(Typeface.createFromAsset(
                 getAssets(), "fonts/headers_three.ttf"));
     }
 
@@ -144,47 +144,47 @@ public class DictionaryAll extends AppCompatActivity {
         Glide
                 .with(this)
                 .load(first)
-                .into(imageView27);
+                .into(ic_main_logo);
         Glide
                 .with(this)
                 .load(second)
-                .into(imageView31);
+                .into(ic_small);
         Glide
                 .with(this)
                 .load(third)
-                .into(imageView30);
+                .into(ic_hard);
         Glide
                 .with(this)
                 .load(four)
-                .into(imageView28);
+                .into(ic_easy);
         Glide
                 .with(this)
                 .load(five)
-                .into(imageView29);
+                .into(ic_medium);
         Glide
                 .with(this)
                 .load(six)
-                .into(imageView32);
+                .into(ic_happy);
         Glide
                 .with(this)
                 .load(seven)
-                .into(img_ManTwo);
+                .into(ic_starts);
         Glide
                 .with(this)
                 .load(eight)
-                .into(img_ManFi);
+                .into(ic_animal);
         Glide
                 .with(this)
                 .load(nine)
-                .into(img_ManTen);
+                .into(ic_planet);
         Glide
                 .with(this)
                 .load(ten)
-                .into(img_ManEi);
+                .into(ic_professions);
         Glide
                 .with(this)
                 .load(eleven)
-                .into(img_ManEigh);
+                .into(ic_transport);
 
     }
 
@@ -202,11 +202,11 @@ public class DictionaryAll extends AppCompatActivity {
             String transport_ru = sharedPreferences.getString("RU_TRANSPORT_CURSOR", "");
             int start_int_ru = Integer.parseInt(sharedPreferences.getString("RU_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("RU_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("RU_HARD_CURSOR", ""));
             String starting_ru = String.valueOf(start_int_ru);
-            textView47.setText(getString(R.string.good) + "\n" + starting_ru + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + animal_ru + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + planet_ru + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.good) + "\n" + professions_ru + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.good) + "\n" + transport_ru + "\n" + getString(R.string.word));
+            txt_one_you.setText(getString(R.string.good) + "\n" + starting_ru + "\n" + getString(R.string.word));
+            txt_two_you.setText(getString(R.string.good) + "\n" + animal_ru + "\n" + getString(R.string.word));
+            txt_three_you.setText(getString(R.string.good) + "\n" + planet_ru + "\n" + getString(R.string.word));
+            txt_five_you.setText(getString(R.string.good) + "\n" + professions_ru + "\n" + getString(R.string.word));
+            txt_six_you.setText(getString(R.string.good) + "\n" + transport_ru + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("en")) {
             String animal_en = sharedPreferences.getString("EN_ANIMAL_CURSOR", "");
@@ -215,11 +215,11 @@ public class DictionaryAll extends AppCompatActivity {
             String transport_en = sharedPreferences.getString("EN_TRANSPORT_CURSOR", "");
             int start_int_en = Integer.parseInt(sharedPreferences.getString("EN_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("EN_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("EN_HARD_CURSOR", ""));
             String starting_en = String.valueOf(start_int_en);
-            textView47.setText(getString(R.string.good) + "\n" + starting_en + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + animal_en + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + planet_en + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.good) + "\n" + professions_en + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.good) + "\n" + transport_en + "\n" + getString(R.string.word));
+            txt_one_you.setText(getString(R.string.good) + "\n" + starting_en + "\n" + getString(R.string.word));
+            txt_two_you.setText(getString(R.string.good) + "\n" + animal_en + "\n" + getString(R.string.word));
+            txt_three_you.setText(getString(R.string.good) + "\n" + planet_en + "\n" + getString(R.string.word));
+            txt_five_you.setText(getString(R.string.good) + "\n" + professions_en + "\n" + getString(R.string.word));
+            txt_six_you.setText(getString(R.string.good) + "\n" + transport_en + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("de")) {
             String animal_de = sharedPreferences.getString("DE_ANIMAL_CURSOR", "");
@@ -228,11 +228,11 @@ public class DictionaryAll extends AppCompatActivity {
             String transport_de = sharedPreferences.getString("DE_TRANSPORT_CURSOR", "");
             int start_int_de = Integer.parseInt(sharedPreferences.getString("DE_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("DE_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("DE_HARD_CURSOR", ""));
             String starting_de = String.valueOf(start_int_de);
-            textView47.setText(getString(R.string.good) + "\n" + starting_de + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + animal_de + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + planet_de + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.good) + "\n" + professions_de + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.good) + "\n" + transport_de + "\n" + getString(R.string.word));
+            txt_one_you.setText(getString(R.string.good) + "\n" + starting_de + "\n" + getString(R.string.word));
+            txt_two_you.setText(getString(R.string.good) + "\n" + animal_de + "\n" + getString(R.string.word));
+            txt_three_you.setText(getString(R.string.good) + "\n" + planet_de + "\n" + getString(R.string.word));
+            txt_five_you.setText(getString(R.string.good) + "\n" + professions_de + "\n" + getString(R.string.word));
+            txt_six_you.setText(getString(R.string.good) + "\n" + transport_de + "\n" + getString(R.string.word));
         }
         if (def_locale.contains("es")) {
             String animal_es = sharedPreferences.getString("ES_ANIMAL_CURSOR", "");
@@ -241,11 +241,11 @@ public class DictionaryAll extends AppCompatActivity {
             String transport_es = sharedPreferences.getString("ES_TRANSPORT_CURSOR", "");
             int start_int_es = Integer.parseInt(sharedPreferences.getString("ES_EASY_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("ES_MEDIUM_CURSOR", "")) + Integer.parseInt(sharedPreferences.getString("ES_HARD_CURSOR", ""));
             String starting_es = String.valueOf(start_int_es);
-            textView47.setText(getString(R.string.good) + "\n" + starting_es + "\n" + getString(R.string.word));
-            textView52.setText(getString(R.string.good) + "\n" + animal_es + "\n" + getString(R.string.word));
-            textView50.setText(getString(R.string.good) + "\n" + planet_es + "\n" + getString(R.string.word));
-            textView56.setText(getString(R.string.good) + "\n" + professions_es + "\n" + getString(R.string.word));
-            textView54.setText(getString(R.string.good) + "\n" + transport_es + "\n" + getString(R.string.word));
+            txt_one_you.setText(getString(R.string.good) + "\n" + starting_es + "\n" + getString(R.string.word));
+            txt_two_you.setText(getString(R.string.good) + "\n" + animal_es + "\n" + getString(R.string.word));
+            txt_three_you.setText(getString(R.string.good) + "\n" + planet_es + "\n" + getString(R.string.word));
+            txt_five_you.setText(getString(R.string.good) + "\n" + professions_es + "\n" + getString(R.string.word));
+            txt_six_you.setText(getString(R.string.good) + "\n" + transport_es + "\n" + getString(R.string.word));
         }
 
 
